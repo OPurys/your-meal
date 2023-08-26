@@ -1,0 +1,30 @@
+.busket {
+    padding: 1.06rem 1.6rem;
+    width: 100%;
+    max-width: 20rem;
+    height: 7.26rem;
+
+    border-radius: 1.125rem;
+    background-color: $white;
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    &__counter {
+        padding-top: .13rem;
+        width: 2.66rem;
+        height: 1.4rem;
+        
+        font-size: .8rem;
+        text-align: center;
+        background-color: $gray;
+        border-radius: .4rem;
+    }
+
+    &__text {
+        font-size: 1.06rem;
+        margin-top: .4em;
+    }
+}

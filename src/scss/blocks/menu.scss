@@ -1,0 +1,38 @@
+.menu {
+    padding: 2.66rem 0 3.33rem;
+
+    &__list {
+        width: 100%;
+        max-width: 82rem;
+        
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__link {
+        padding: .31em .87em;
+
+        font-size: 1.06rem;
+        text-decoration: none;
+        color: $black;
+        background-color: $white;
+        border: .066rem solid $white;
+        border-radius: 3.125em;
+
+        &.active {
+            background-color: #FFAB08;
+        }
+
+        &:hover {
+            border-color: #F86310;
+        }
+    }
+
+    &__icon {
+        margin-right: .53rem;
+    }
+}
+
+
+
+

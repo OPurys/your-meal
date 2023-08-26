@@ -1,0 +1,31 @@
+@import "vars";
+
+// Bootstrap
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/bootstrap-utilities";
+@import "bootstrap/bootstrap-reboot";
+@import "bootstrap/containers";
+@import "bootstrap/grid";
+
+
+html {
+    font-size: 15px;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-family: 'Nunito', sans-serif;
+    color: $black;
+    background-color: #f9f9f9;
+}
+
+
+// Blocks
+@import "blocks/header";
+@import "blocks/menu";
+@import "blocks/products";
+@import "blocks/busket";
+@import "blocks/btn";

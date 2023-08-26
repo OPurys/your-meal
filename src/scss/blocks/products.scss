@@ -1,0 +1,47 @@
+.products {
+    padding-bottom: 6.66rem;
+
+    &__title {
+        font-size: 2.66rem;
+        font-weight: 600;
+    }
+
+    &__item {
+        margin-bottom: 2rem;
+        padding: .8rem .8rem 0 .8rem;
+        width: 100%;
+        max-width: 20rem;
+
+        background-color: $white;
+        border-radius: 1.2rem;
+    }
+
+    &__photo {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__price {
+        margin-top: .66em;
+        margin-bottom: .33em;
+
+        font-size: 1.6rem;
+        line-height: 1;
+        font-weight: 600;
+    }
+
+    &__name {
+        margin-bottom: 1.81em;
+
+        font-size: 1.06rem;
+    }
+
+    &__weight {
+        margin-bottom: .5em;
+
+        font-size: 1.06rem;
+        font-weight: 600;
+        color: #B1B1B1;
+    }
+}
