@@ -1,12 +1,31 @@
-header {
-    padding: 25px 0 72px;
-    height: 465px;
-    background: url('../img/header/bg.png') center no-repeat;
-
+.header {
+    padding: 1.6rem 0 4.2rem;
+    background: url('../img/header/bg.png') bottom no-repeat;
     background-size: cover;
+
+    &__intro {
+        margin-top: 3.33rem;
+    }
+
+    &__img {
+        margin-right: 3.8rem;
+    }
+
+    &__title {
+        margin-bottom: 1em;
+
+        font-size: 3.33rem;
+        font-weight: 800;
+        color: $white;
+
+        & span {
+            color: $orange;
+        }
+    }
+
+    &__subtext {
+        font-size: 1.06rem;
+        color: $white;
+    }
 }
 
-.header__intro {
-    width: 100%;
-    max-width: 52.333rem;
-}

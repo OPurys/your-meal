@@ -1,5 +1,5 @@
 .btn {
-    margin-bottom: 0.75em;
+    margin-bottom: .75em;
 
     display: inline-block;
     width: 100%;
@@ -15,7 +15,37 @@
     border-radius: .75em;
     background-color: $gray;
 
-    &:hover {
+    transition: background-color .2s linear;
+
+    &--close {
+        position: absolute;
+        top: 1.6rem;
+        right: 2.93rem;
+
+        margin-bottom: 0;
+        width: 1.6rem;
+        height: 1.6rem;
+
+        font-size: 0;
+        
+        background: none;
+        border-radius: 0;
+
+        transition: transform .2s linear;
+
+        &:hover {
+            transform: translateY(-1px);
+        }
+    }
+
+    &--orange {
+        max-width: 100%;
+
+        color: $white;
+        background-color: $orange;
+    }
+
+    &:hover:not(&--close) {
         background-color: $yellow-orange;
     }
 }

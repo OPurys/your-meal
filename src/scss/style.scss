@@ -2,7 +2,6 @@
 
 // Bootstrap
 @import "bootstrap/functions";
-@import "bootstrap/variables";
 @import "bootstrap/mixins";
 @import "bootstrap/bootstrap-utilities";
 @import "bootstrap/bootstrap-reboot";
@@ -22,6 +21,14 @@ body {
     background-color: #f9f9f9;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
 
 // Blocks
 @import "blocks/header";
@@ -29,3 +36,6 @@ body {
 @import "blocks/products";
 @import "blocks/busket";
 @import "blocks/btn";
+@import "blocks/footer";
+@import "blocks/modal";
+@import "blocks/form";

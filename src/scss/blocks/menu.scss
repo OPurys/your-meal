@@ -4,13 +4,12 @@
     &__list {
         width: 100%;
         max-width: 82rem;
-        
-        display: flex;
-        justify-content: space-between;
     }
 
     &__link {
-        padding: .31em .87em;
+        display: flex;
+        align-items: center;
+        padding: .56em .87em;
 
         font-size: 1.06rem;
         text-decoration: none;

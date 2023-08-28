@@ -6,39 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap">
     <link rel="stylesheet" href="css/style.min.css">
-    <title>Document</title>
+    <title>YourMeal</title>
 </head>
 
 <body>
-    <header>
-    <div class="container-md">
+
+    <!-- Header -->
+    <header class="header">
+    <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <img src="img\header\logo.svg" width="150" height="29" alt="logo">
             </div>
         </div>
-        <div class="header__intro mx-auto">
-            <div class="row">
-                <div class="col-5">
-                    <img src="img\header\g10.png" width="253" height="290" alt="">
-                </div>
-                <div class="col-7">
-                    <h1>Только самые<br>сочные бургеры!</h1>
-                    <div class="suptext">
-                        Бесплатная доставка от 599₽
+        <div class="row">
+            <div class="col-12">
+                <div class="header__intro d-flex justify-content-center">
+                    <img class="header__img" src="img\header\g10.png" width="253" height="290" alt="">
+                    <div class="mt-4">
+                        <h1 class="header__title">Только самые<br><span>сочные бургеры!</span></h1>
+                        <div class="header__subtext">
+                            Бесплатная доставка от 300₴
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </header>
+
     <main>
 
         <!-- Menu -->
         <div class="menu">
-            <div class="container">
-                <nav class="menu__list">
+            <div class="container-xxl">
+                <nav class="menu__list d-flex justify-content-between">
                     <a class="menu__link active" href="#">
                         <img class="menu__icon" src="img\menu\menu-1.svg" alt="burger">Бургеры
                     </a>
@@ -73,12 +75,15 @@
             </div> <!-- /.container -->
         </div> <!-- /.menu -->
 
+        <!-- Products -->
         <section class="products">
             <div class="container-xxl">
                 <div class="row">
-                    <div class="col-3"></div>
+                    <div class="col-3 opacity-0">Отступ</div>
                     <div class="col-3">
                         <h2 class="products__title">Бургеры</h2>
+                        <h2 class="products__title d-none">Закуски</h2>
+                        <h2 class="products__title d-none">Хот-доги</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -91,61 +96,229 @@
                             <div class="busket__text">Тут пока пусто :&lpar;</div>
                         </div>
                     </div>
+
+                    <!-- Column-1 -->
+                    <!-- Бургеры -->
                     <div class="col-3">
                         <div class="products__item">
                             <img class="products__photo" src="img\products\burgers\burger-1.jpg" alt="burger">
                             <div class="products__price">345₴</div>
                             <div class="products__name">Мясная бомба</div>
                             <div class="products__weight">520г</div>
-                            <button class="btn">Добавить</button>
+                            <button class="btn" type="button">Добавить</button>
                         </div>
                         <div class="products__item">
                             <img class="products__photo" src="img\products\burgers\burger-3.jpg" alt="burger">
                             <div class="products__price">240₴</div>
                             <div class="products__name">Тяжелый удар</div>
                             <div class="products__weight">470г</div>
-                            <button class="btn">Добавить</button>
+                            <button class="btn" type="button">Добавить</button>
                         </div>
                     </div>
+
+                    <!-- Закуски -->
+                    <div class="col-3 d-none">
+                        <div class="products__item">
+                            <img class="products__photo" src="img\products\snacks\photo-1.jpg" alt="snacks">
+                            <div class="products__price">125₴</div>
+                            <div class="products__name">Начос</div>
+                            <div class="products__weight">220г</div>
+                            <button class="btn" type="button">Добавить</button>
+                        </div>
+                    </div>
+
+                    <!-- Хот-доги -->
+                    <div class="col-3 d-none">
+                        <div class="products__item">
+                            <img class="products__photo" src="img\products\hotdogs\photo-1.jpg" alt="snacks">
+                            <div class="products__price">145₴</div>
+                            <div class="products__name">Домашний хот-дог</div>
+                            <div class="products__weight">250г</div>
+                            <button class="btn" type="button">Добавить</button>
+                        </div>
+                    </div>
+
+                    <!-- Column-2 -->
+                    <!-- Бургеры -->
                     <div class="col-3">
                         <div class="products__item">
                             <img class="products__photo" src="img\products\burgers\burger-2.jpg" alt="burger">
                             <div class="products__price">275₴</div>
                             <div class="products__name">Супер сырный</div>
                             <div class="products__weight">512г</div>
-                            <button class="btn">Добавить</button>
+                            <button class="btn" type="button">Добавить</button>
                         </div>
                         <div class="products__item">
                             <img class="products__photo" src="img\products\burgers\burger-4.jpg" alt="burger">
                             <div class="products__price">225₴</div>
                             <div class="products__name">Вечная классика</div>
                             <div class="products__weight">450г</div>
-                            <button class="btn">Добавить</button>
+                            <button class="btn" type="button">Добавить</button>
                         </div>
                     </div>
+
+                    <!-- Закуски -->
+                    <div class="col-3 d-none">
+                        <div class="products__item">
+                            <img class="products__photo" src="img\products\snacks\photo-2.jpg" alt="snacks">
+                            <div class="products__price">120₴</div>
+                            <div class="products__name">Картошка фри</div>
+                            <div class="products__weight">180г</div>
+                            <button class="btn" type="button">Добавить</button>
+                        </div>
+                    </div>
+
+                    <!-- Хот-доги -->
+                    <div class="col-3 d-none">
+                        <div class="products__item">
+                            <img class="products__photo" src="img\products\hotdogs\photo-2.jpg" alt="snacks">
+                            <div class="products__price">120₴</div>
+                            <div class="products__name">Жгучий хот-дог</div>
+                            <div class="products__weight">245г</div>
+                            <button class="btn" type="button">Добавить</button>
+                        </div>
+                    </div>
+
+                    <!-- Column-3 -->
+                    <!-- Бургеры -->
                     <div class="col-3">
                         <div class="products__item">
                             <img class="products__photo" src="img\products\burgers\burger-3.jpg" alt="burger">
                             <div class="products__price">320₴</div>
                             <div class="products__name">Сытный</div>
                             <div class="products__weight">580г</div>
-                            <button class="btn">Добавить</button>
+                            <button class="btn" type="button">Добавить</button>
                         </div>
                         <div class="products__item">
                             <img class="products__photo" src="img\products\burgers\burger-6.jpg" alt="burger">
                             <div class="products__price">280₴</div>
                             <div class="products__name">Итальянский</div>
                             <div class="products__weight">510г</div>
-                            <button class="btn">Добавить</button>
+                            <button class="btn" type="button">Добавить</button>
                         </div>
                     </div>
-                </div>
+
+                    <!-- Закуски -->
+                    <div class="col-3 d-none">
+                        <div class="products__item">
+                            <img class="products__photo" src="img\products\snacks\photo-3.jpg" alt="burger">
+                            <div class="products__price">115₴</div>
+                            <div class="products__name">Луковые кольца</div>
+                            <div class="products__weight">160г</div>
+                            <button class="btn" type="button">Добавить</button>
+                        </div>
+                    </div>
+
+                    <!-- Хот-доги -->
+                    <div class="col-3 d-none">
+                        <div class="products__item">
+                            <img class="products__photo" src="img\products\hotdogs\photo-3.jpg" alt="snacks">
+                            <div class="products__price">110₴</div>
+                            <div class="products__name">Классический хот-дог</div>
+                            <div class="products__weight">215г</div>
+                            <button class="btn" type="button">Добавить</button>
+                        </div>
+                    </div>
+                </div> <!-- /.row -->
             </div> <!-- /.container -->
         </section>
 
     </main>
-    <footer>footer</footer>
 
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-6">
+                <a href="#">
+                    <img class="footer__logo" src="img\footer\logo.png" alt="logo">
+                </a>
+                <div class="footer__copyright">© YouMeal, 2023</div>
+            </div>
+            <div class="col-3">
+                <div class="footer__info">
+                    <div class="footer__text">Номер для заказа</div>
+                    <div class="footer__contacts d-flex align-items-center">
+                        <img class="footer__phone" src="img/footer/phone.svg" alt="phone">
+                        +3(097)833-38-11
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="footer__text">
+                    Мы в соцсетях
+                </div>
+                <div class="footer__social">
+                    <a href="#" target="_blank">
+                        <img class="footer__icon" src="img\footer\vk.svg" alt="vk">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img class="footer__icon" src="img\footer\telegram.svg" alt="telegram">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
+
+    <!-- Modal -->
+    <div class="modal">
+    <div class="modal__dialog">
+
+        <button class="btn btn--close" type="button">
+            <img src="img/modal/close.svg" alt="close">
+        </button>
+
+        <div class="d-flex">
+            <div class="modal__left">
+                <img src="img/modal/img.png" alt="img">
+            </div>
+
+            <div class="modal__right">
+                <h2 class="modal__title">
+                    Доставка
+                </h2>
+                <form class="form" action="/" method="post">
+                    <div class="form__group">
+                        <input class="form__input" type="text" name="text" placeholder="Ваше имя">
+                    </div>
+                    <div class="form__group">
+                        <input class="form__input" type="phone" name="phone" placeholder="Телефон">
+                    </div>
+                    <div class="form__group-radio">
+                        <div class="mb-2 d-flex align-items-center">
+                            <input class="form__input" type="radio" name="option" id="radio1">
+                        <label class="form__label" for="radio1">Самовывоз</label>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <input class="form__input" type="radio" name="option" id="radio2" checked>
+                        <label class="form__label" for="radio2">Доставка</label>
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <input class="form__input" type="text" name="text" placeholder="Улица, дом, квартира">
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="form__group-half">
+                            <input class="form__input" type="text" name="text" placeholder="Этаж">
+                        </div>
+                        <div class="form__group-half">
+                            <input class="form__input" type="text" name="text" placeholder="Домофон">
+                        </div>
+                    </div>
+                    <div class="form__group-button">
+                        <button class="btn btn--orange" type="submit">Отправить</button>
+                    </div>
+                </form>
+            </div> <!-- /.modal__right -->
+        </div> <!-- /.d-flex -->
+
+    </div> <!-- /.modal__dialog -->
+</div> <!-- /.modal -->
+
+    <!-- JS -->
     <script src="js/app.min.js"></script>
 </body>
 

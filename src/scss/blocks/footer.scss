@@ -1,0 +1,33 @@
+.footer {
+    padding: 3.4rem 0 4rem;
+    
+    background-color: $white;
+
+    &__copyright {
+        margin-top: 4.9em;
+
+        font-size: .8rem;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+    }
+
+    &__phone {
+        margin-right: .26rem;
+    }
+
+    &__contacts {
+        margin-top: 1.5em;
+
+        font-size: 1.06rem;
+    }
+
+    &__social {
+        margin-top: 1rem;
+
+        & .footer__icon:first-of-type {
+            margin-right: .7rem;
+        }
+    }
+}

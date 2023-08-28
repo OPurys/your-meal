@@ -2,6 +2,8 @@
     padding-bottom: 6.66rem;
 
     &__title {
+        margin-bottom: .6em;
+
         font-size: 2.66rem;
         font-weight: 600;
     }
@@ -14,6 +16,10 @@
 
         background-color: $white;
         border-radius: 1.2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &__photo {
