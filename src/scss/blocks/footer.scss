@@ -30,4 +30,9 @@
             margin-right: .7rem;
         }
     }
+
+    &__icon:hover {
+        transition: transform .2s linear;
+        transform: rotate(360deg);
+    }
 }

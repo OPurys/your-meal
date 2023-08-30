@@ -34,7 +34,7 @@
         transition: transform .2s linear;
 
         &:hover {
-            transform: translateY(-1px);
+            transform: translateY(- .06rem);
         }
     }
 
@@ -47,5 +47,9 @@
 
     &:hover:not(&--close) {
         background-color: $yellow-orange;
+    }
+
+    &--modal {
+        margin-bottom: 0;
     }
 }

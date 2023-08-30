@@ -44,7 +44,7 @@
     background-color: $white;
 
     &::placeholder {
-        color: #B1B1B1;
+        color: $metallic;
     }
 
     &:hover:not([type="radio"]) {

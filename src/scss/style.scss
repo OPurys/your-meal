@@ -18,7 +18,7 @@ body {
     line-height: 1.3;
     font-family: 'Nunito', sans-serif;
     color: $black;
-    background-color: #f9f9f9;
+    background-color: $bg-gray;
 }
 
 h1,
@@ -39,3 +39,8 @@ h6 {
 @import "blocks/footer";
 @import "blocks/modal";
 @import "blocks/form";
+@import "blocks/modal-inner";
+
+
+// Helpers
+@import "blocks/helpers";
