@@ -3,7 +3,7 @@
 
     &__title {
         margin-bottom: .61em;
-        
+
         font-size: 2.66rem;
         font-weight: 600;
     }
@@ -54,45 +54,8 @@
         }
     }
 
-    &__counter {
-        position: relative;
-        font-size: 1.06rem;
-
-        width: 100%;
-        max-width: 5.25em;
-        height: 2.5em;
-
-        background-color: $gray;
-        border-radius: .75em;
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: .6rem;
-            left: .8rem;
-
-            width: .46rem;
-            height: 1.46rem;
-
-            background: url('../img/modal-inner/minus.svg') center no-repeat;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: .6rem;
-            right: .8rem;
-            
-            width: .46rem;
-            height: 1.46rem;
-
-            background: url('../img/modal-inner/plus.svg') center no-repeat;
-        }
-    }
-
     &__price {
         font-size: 1.6rem;
         font-weight: 600;
     }
-
 }

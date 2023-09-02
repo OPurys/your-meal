@@ -38,6 +38,12 @@
         }
     }
 
+    &--order {
+        margin-bottom: .5em;
+        color: $white;
+        background-color: $orange;
+    }
+
     &--orange {
         max-width: 100%;
 

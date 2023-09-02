@@ -7098,30 +7098,89 @@ h6 {
   color: #B1B1B1;
 }
 
-.busket {
-  padding: 1.06rem 1.6rem;
+.basket {
+  padding: 1.6rem 1.06rem;
   width: 100%;
   max-width: 20rem;
-  height: 7.26rem;
+  min-height: 7.26rem;
   border-radius: 1.125rem;
   background-color: #fff;
 }
-.busket__title {
+.basket__title {
   font-size: 1.6rem;
   font-weight: 600;
 }
-.busket__counter {
-  padding-top: 0.13rem;
-  width: 2.66rem;
-  height: 1.4rem;
+.basket__counter {
+  width: 3.41em;
+  height: 1.66em;
   font-size: 0.8rem;
-  text-align: center;
   background-color: #F2F2F3;
-  border-radius: 0.4rem;
+  border-radius: 0.5em;
 }
-.busket__text {
+.basket__text {
   font-size: 1.06rem;
   margin-top: 0.4em;
+}
+
+.order {
+  margin-top: 1em;
+  font-size: 0.8rem;
+}
+.order__product {
+  padding: 1.33em 0;
+  border-top: 0.083em solid #F2F2F3;
+}
+.order__img {
+  margin-right: 0.5em;
+  width: 5.33em;
+  height: 4.33em;
+  border-radius: 0.67em;
+}
+.order__name {
+  margin-bottom: 0.083em;
+}
+.order__weight {
+  margin-bottom: 0.5em;
+  color: #B1B1B1;
+}
+.order__block {
+  padding-top: 1em;
+  margin-bottom: 1.5em;
+  font-size: 1.06rem;
+  border-top: 0.063em solid #F2F2F3;
+}
+.order__svg {
+  margin-right: 0.67em;
+}
+
+.counter {
+  position: relative;
+  font-size: 1.067rem;
+  width: 100%;
+  max-width: 5.25em;
+  height: 2.5em;
+  background-color: #F2F2F3;
+  border-radius: 0.75em;
+}
+.counter::before {
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  left: 0.8rem;
+  width: 0.46rem;
+  height: 1.46rem;
+  cursor: pointer;
+  background: url("../img/modal-inner/minus.svg") center no-repeat;
+}
+.counter::after {
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  width: 0.46rem;
+  height: 1.46rem;
+  cursor: pointer;
+  background: url("../img/modal-inner/plus.svg") center no-repeat;
 }
 
 .btn {
@@ -7152,6 +7211,11 @@ h6 {
 }
 .btn--close:hover {
   transform: translateY(-0.06rem);
+}
+.btn--order {
+  margin-bottom: 0.5em;
+  color: #fff;
+  background-color: #FF7020;
 }
 .btn--orange {
   max-width: 100%;
@@ -7352,33 +7416,6 @@ h6 {
 .modal-inner__item:last-child {
   margin-top: 0.4em;
   color: #B1B1B1;
-}
-.modal-inner__counter {
-  position: relative;
-  font-size: 1.06rem;
-  width: 100%;
-  max-width: 5.25em;
-  height: 2.5em;
-  background-color: #F2F2F3;
-  border-radius: 0.75em;
-}
-.modal-inner__counter::before {
-  content: "";
-  position: absolute;
-  top: 0.6rem;
-  left: 0.8rem;
-  width: 0.46rem;
-  height: 1.46rem;
-  background: url("../img/modal-inner/minus.svg") center no-repeat;
-}
-.modal-inner__counter::after {
-  content: "";
-  position: absolute;
-  top: 0.6rem;
-  right: 0.8rem;
-  width: 0.46rem;
-  height: 1.46rem;
-  background: url("../img/modal-inner/plus.svg") center no-repeat;
 }
 .modal-inner__price {
   font-size: 1.6rem;

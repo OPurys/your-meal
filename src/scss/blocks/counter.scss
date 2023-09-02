@@ -1,0 +1,37 @@
+.counter {
+    position: relative;
+    font-size: 1.067rem;
+
+    width: 100%;
+    max-width: 5.25em;
+    height: 2.5em;
+
+    background-color: $gray;
+    border-radius: .75em;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: .6rem;
+        left: .8rem;
+
+        width: .46rem;
+        height: 1.46rem;
+
+        cursor: pointer;
+        background: url('../img/modal-inner/minus.svg') center no-repeat;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: .6rem;
+        right: .8rem;
+
+        width: .46rem;
+        height: 1.46rem;
+
+        cursor: pointer;
+        background: url('../img/modal-inner/plus.svg') center no-repeat;
+    }
+}

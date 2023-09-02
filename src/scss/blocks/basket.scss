@@ -1,8 +1,8 @@
-.busket {
-    padding: 1.06rem 1.6rem;
+.basket {
+    padding: 1.6rem 1.06rem;
     width: 100%;
     max-width: 20rem;
-    height: 7.26rem;
+    min-height: 7.26rem;
 
     border-radius: 1.125rem;
     background-color: $white;
@@ -13,14 +13,12 @@
     }
 
     &__counter {
-        padding-top: .13rem;
-        width: 2.66rem;
-        height: 1.4rem;
+        width: 3.41em;
+        height: 1.66em;
         
         font-size: .8rem;
-        text-align: center;
         background-color: $gray;
-        border-radius: .4rem;
+        border-radius: .5em;
     }
 
     &__text {

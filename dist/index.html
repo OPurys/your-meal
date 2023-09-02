@@ -87,15 +87,47 @@
                         <h2 class="products__title hidden">Хот-доги</h2>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="col-3">
-                        <div class="busket">
+
+                        <!-- Basket -->
+                        <div class="basket">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="busket__title">Корзина</div>
-                                <div class="busket__counter">0</div>
+                                <div class="basket__title">Корзина</div>
+                                <div class="basket__counter d-flex justify-content-center align-items-center">0</div>
                             </div>
-                            <div class="busket__text">Тут пока пусто :&lpar;</div>
-                        </div>
+                            <div class="basket__text hidden">Тут пока пусто :&lpar;</div>
+
+                            <!-- Order -->
+                            <div class="order">
+                                <div class="order__product d-flex justify-content-between align-items-center">
+                                    <div class="d-flex">
+                                        <img class="order__img" src="img\products\burgers\burger-2.jpg" alt="order">
+                                        <div>
+                                            <div class="order__name">Супер сырный</div>
+                                            <div class="order__weight">512г</div>
+                                            <div class="order__price">225₴</div>
+                                        </div>
+                                    </div>
+                                    <div class="counter d-flex justify-content-center align-items-center">
+                                        1
+                                    </div>
+                                </div> <!-- /.order__product -->
+
+                                <div class="order__block d-flex justify-content-between">
+                                    <div class="order__total">Итого</div>
+                                    <div class="order__sum">225₴</div>
+                                </div>
+
+                                <button class="btn btn--order" type="button">Оформить заказ</button>
+
+                                <div class="order__delivery d-flex align-items-center">
+                                    <img class="order__svg" src="img\order\delivery.svg" alt="img">
+                                    Бесплатная доставка
+                                </div>
+                            </div> <!-- /.order -->
+                        </div> <!-- /.basket -->
                     </div>
 
                     <!-- Column-1 -->
@@ -369,7 +401,7 @@
                     </ul>
 
                     <div class="d-flex justify-content-between">
-                        <div class="modal-inner__counter d-flex justify-content-center align-items-center">
+                        <div class="counter d-flex justify-content-center align-items-center">
                             1
                         </div>
                         <div class="modal-inner__price d-flex align-items-center">
