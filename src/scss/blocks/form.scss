@@ -1,5 +1,5 @@
 .form__group {
-    margin-bottom: .53rem;
+    margin-bottom: .42rem;
 
     &:nth-child(2) {
         margin-bottom: 0;
@@ -11,6 +11,10 @@
     flex-direction: column;
 
     margin: 1.06rem 0;
+
+    @include breakpoint($mobile) {
+        margin: 1.6rem 0;
+    }
 }
 
 .form__group-half {
@@ -20,10 +24,22 @@
     &:first-child {
         margin-right: .53rem;
     }
+
+    @include breakpoint($extra-small) {
+        max-width: 10rem;
+    }
 }
 
 .form__group-button {
     margin-top: 2.13rem;
+
+    @include breakpoint($extra-small) {
+        margin-top: 1.6rem;
+    }
+
+    @include breakpoint($mobile) {
+        margin-top: 23.73rem;
+    }
 }
 
 .form__input:not([type="radio"]) {
@@ -54,6 +70,12 @@
     &:focus:not([type="radio"]) {
         outline: 0;
         border-color: $orange;
+    }
+
+    @include breakpoint($extra-small) {
+        font-size: .67rem;
+
+        max-height: 3em;
     }
 }
 
@@ -87,4 +109,8 @@
 .form__label {
     font-size: .8rem;
     cursor: pointer;
+
+    @include breakpoint($extra-small) {
+        font-size: .67rem;
+    }
 }

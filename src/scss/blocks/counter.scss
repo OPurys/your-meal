@@ -12,9 +12,8 @@
     &::before {
         content: '';
         position: absolute;
-        top: .6rem;
         left: .8rem;
-
+        
         width: .46rem;
         height: 1.46rem;
 
@@ -25,7 +24,6 @@
     &::after {
         content: '';
         position: absolute;
-        top: .6rem;
         right: .8rem;
 
         width: .46rem;
@@ -33,5 +31,10 @@
 
         cursor: pointer;
         background: url('../img/modal-inner/plus.svg') center no-repeat;
+    }
+
+    @include breakpoint($extra-small) {
+        max-width: 6.166em;
+        font-size: .8rem;
     }
 }

@@ -29,9 +29,27 @@
         margin-bottom: 1.5em;
         font-size: 1.06rem;
         border-top: .063em solid $gray;
+
+        @include breakpoint($extra-small) {
+            font-size: .8rem;
+        }
+    }
+
+    &__delivery {
+        @include breakpoint($extra-small) {
+            font-size: .666rem;
+        }
     }
 
     &__svg {
         margin-right: .67em;
+    }
+
+    &__collapse {
+        color: $metallic;
+
+        @include breakpoint($extra-small) {
+            font-size: .666rem;
+        }
     }
 }

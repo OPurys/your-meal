@@ -1,40 +1,127 @@
 .products {
-    padding-bottom: 6.66rem;
+    padding-bottom: 4.666rem;
+
+    @include breakpoint($large-tablets) {
+        padding-top: 9rem;
+        position: relative;
+    }
+
+    @include breakpoint($extra-small) {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
 
     &__title {
         margin-bottom: .6em;
+        width: 100%;
+        max-width: 12.38em;
 
         font-size: 2.66rem;
         font-weight: 600;
+        text-align: right;
+
+        @include breakpoint($large-tablets) {
+            text-align: left;
+        }
+
+        @include breakpoint($extra-small) {
+            font-size: 1.866rem;
+        }
+    }
+
+    &__inner {
+        display: flex;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &__item {
         margin-bottom: 2rem;
-        padding: .8rem .8rem 0 .8rem;
+        margin-right: 2rem;
+        padding: .8rem .8rem;
         width: 100%;
         max-width: 20rem;
 
         background-color: $white;
         border-radius: 1.2rem;
 
-        &:last-child {
-            margin-bottom: 0;
+        &:nth-of-type(3n) {
+            margin-right: 0;
+        }
+
+        @include breakpoint($desktops) {
+            &:nth-of-type(3n) {
+                margin-right: 2rem;
+            }
+
+            &:nth-of-type(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @include breakpoint($large-tablets) {
+            width: 11.2rem;
+
+            &:nth-of-type(2n) {
+                margin-right: 2rem;
+            }
+        }
+
+        @include breakpoint($extra-small) {
+            padding: .266rem .266rem;
+            margin-right: 1.333rem;
+            margin-bottom: 1.333rem;
+            width: 9.666rem;
+
+            &:nth-of-type(2n),
+            &:nth-of-type(3n) {
+                margin-right: 1.333rem;
+            }
+        }
+
+        @include breakpoint($mobile) {
+            margin-right: .666rem !important;
+            margin-bottom: .666rem;
+            width: 9.5rem;
+
+            &:nth-of-type(2n) {
+                margin-right: 0 !important;
+            }
+        }
+    }
+
+    &__img {
+        margin-bottom: 1.066rem;
+
+        @include breakpoint($extra-small) {
+            margin-bottom: .666rem;
         }
     }
 
     &__price {
-        margin-top: .66em;
         margin-bottom: .33em;
 
         font-size: 1.6rem;
         line-height: 1;
         font-weight: 600;
+
+        @include breakpoint($extra-small) {
+            margin-bottom: .25em;
+            font-size: 1.066rem;
+        }
     }
 
     &__name {
         margin-bottom: 1.81em;
-
         font-size: 1.06rem;
+
+        @include breakpoint($extra-small) {
+            margin-bottom: 1.333em;
+            font-size: .8rem;
+        }
     }
 
     &__weight {
@@ -43,5 +130,10 @@
         font-size: 1.06rem;
         font-weight: 600;
         color: $metallic;
+
+        @include breakpoint($extra-small) {
+            margin-bottom: .583em;
+            font-size: .8rem;
+        }
     }
 }

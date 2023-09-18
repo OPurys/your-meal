@@ -1,36 +1,90 @@
 .modal-inner {
     padding: 1.6rem 1.6rem 2.4rem;
 
-    &__title {
-        margin-bottom: .61em;
+    @include breakpoint($extra-small) {
+        padding: 1.06rem 1.06rem 1.6rem;
+    }
 
-        font-size: 2.66rem;
+    @include breakpoint($mobile) {
+        padding: 2.133rem .666rem;
+    }
+
+    &__title {
+        margin-bottom: .6em;
+
+        font-size: 2.67rem;
         font-weight: 600;
+
+        @include breakpoint($extra-small) {
+            margin-bottom: .57em;
+            font-size: 1.87rem;
+        }
+
+        @include breakpoint($mobile) {
+            margin-bottom: .428em;
+        }
+    }
+
+    &__direction {
+        display: flex;
+        
+        @include breakpoint($mobile) {
+            flex-wrap: wrap;
+        }
     }
 
     &__left {
         margin-right: 1.06rem;
-        width: 43.33%;
+
+        @include breakpoint($extra-small) {
+            margin-right: .53rem;
+            width: 45.92%;
+        }
+
+        @include breakpoint($mobile) {
+            margin-right: 0;
+            margin-bottom: 1.066rem;
+            width: 100%;
+        }
     }
 
     &__photo {
-        margin-bottom: 2.66rem;
+        border-radius: 1.066rem;
+
+        @include breakpoint($mobile) {
+            max-height: 15.466rem;
+            width: 100%;
+        }
     }
 
     &__right {
-        width: 54%;
+        margin-bottom: 2.53rem;
+        width: 54.09%;
+
+        @include breakpoint($extra-small) {
+            margin-bottom: 1.63rem;
+            width: 52.422%;
+        }
+
+        @include breakpoint($mobile) {
+            margin-bottom: 6.533rem;
+            width: 100%;
+        }
     }
 
     &__text {
         margin-bottom: .63em;
         font-size: 1.06rem;
+
+        @include breakpoint($extra-small) {
+            margin-bottom: .83em;
+            font-size: .8rem;
+        }
     }
 
     &__list {
         padding: 0;
         margin: 0;
-        margin-bottom: 2.53rem;
-
         list-style: none;
     }
 
@@ -52,10 +106,23 @@
             margin-top: .4em;
             color: $metallic;
         }
+
+        @include breakpoint($extra-small) {
+            font-size: .67rem;
+        }
     }
 
     &__price {
+        margin-left: auto;
         font-size: 1.6rem;
         font-weight: 600;
+
+        @include breakpoint($extra-small) {
+            font-size: 1.066rem;
+        }
+
+        @include breakpoint($mobile) {
+            margin-top: 1em;
+        }
     }
 }

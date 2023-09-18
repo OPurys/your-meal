@@ -1,22 +1,36 @@
 .menu {
-    padding: 2.66rem 0 3.33rem;
+    padding: 2.666rem 0 3.333rem;
+
+    @include breakpoint($desktops) {
+        padding: 2.666rem 0; 
+    }
+
+    @include breakpoint($extra-small) {
+        padding: 2rem 0 1.333rem;
+    }
 
     &__list {
-        width: 100%;
-        max-width: 82rem;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &__link {
-        display: flex;
-        align-items: center;
+        margin-right: 1.5em;
         padding: .56em .87em;
 
-        font-size: 1.06rem;
+        display: flex;
+        align-items: center;
+        
+        font-size: 1.066rem;
         text-decoration: none;
         color: $black;
         background-color: $white;
         border: .066rem solid $white;
         border-radius: 3.125em;
+
+        &:last-child {
+            margin-right: 0;
+        }
 
         &.active {
             background-color: $yellow-orange;
@@ -24,6 +38,19 @@
 
         &:hover {
             border-color: #F86310;
+        }
+
+        @include breakpoint($desktops) {
+            margin-bottom: .666rem;
+        }
+
+        @include breakpoint($extra-small) {
+            margin-right: 1em;
+            font-size: .8rem;
+        }
+
+        @include breakpoint($mobile) {
+            margin-right: .666em;
         }
     }
 

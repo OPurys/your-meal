@@ -2,13 +2,13 @@
 <div class="modal hidden">
     <div class="modal__dialog">
 
-        <button class="btn btn--close" type="button">
+        <button class="btn  btn--close" type="button">
             <img src="img/modal/close.svg" alt="close">
         </button>
 
         <div class="d-flex">
             <div class="modal__left">
-                <img src="img/modal/img.png" alt="img">
+                <img class="img" src="img/modal/img.png" alt="img">
             </div>
 
             <div class="modal__right">
@@ -56,9 +56,9 @@
 
 <!-- Modal -->
 <div class="modal hidden">
-    <div class="modal__dialog">
+    <div class="modal__dialog  modal__dialog--height">
 
-        <button class="btn btn--close" type="button">
+        <button class="btn  btn--close" type="button">
             <img src="img/modal/close.svg" alt="close">
         </button>
 
@@ -67,10 +67,9 @@
                 Мясная бомба
             </h2>
 
-            <div class="d-flex">
+            <div class="modal-inner__direction">
                 <div class="modal-inner__left">
                     <img class="img modal-inner__photo" src="img/products/burgers/burger-1.jpg" alt="product">
-                    <button class="btn btn--orange btn--modal" type="button">Добавить</button>
                 </div>
 
                 <div class="modal-inner__right">
@@ -101,18 +100,18 @@
                             520г, ккал 430
                         </li>
                     </ul>
-
-                    <div class="d-flex justify-content-between">
-                        <div class="counter d-flex justify-content-center align-items-center">
-                            1
-                        </div>
-                        <div class="modal-inner__price d-flex align-items-center">
-                            345₴
-                        </div>
-                    </div>
                 </div> <!-- /.modal-inner__right -->
-            </div> <!-- /.d-flex -->
-        </div> <!-- /.modal-inner -->
+            </div> <!-- /.modal-inner__direction -->
 
+            <div class="d-flex flex-wrap">
+                <button class="btn btn--orange btn--modal" type="button">Добавить</button>
+                <div class="counter d-flex justify-content-center align-items-center">
+                    1
+                </div>
+                <div class="modal-inner__price d-flex align-items-center">
+                    345₴
+                </div>
+            </div>
+        </div> <!-- /.modal-inner -->
     </div> <!-- /.modal__dialog -->
 </div> <!-- /.modal -->

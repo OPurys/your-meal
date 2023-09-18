@@ -1,5 +1,7 @@
 .basket {
-    padding: 1.6rem 1.06rem;
+    padding: 1.6rem 1.066rem;
+    margin-right: 2rem;
+    height: 100%;
     width: 100%;
     max-width: 20rem;
     min-height: 7.26rem;
@@ -7,9 +9,26 @@
     border-radius: 1.125rem;
     background-color: $white;
 
+    @include breakpoint($large-tablets) {
+        margin-right: 0;
+        height: auto;
+        position: absolute;
+        top: 0;
+    }
+
+    @include breakpoint($extra-small) {
+        padding: 1.066rem .666rem;
+        max-width: 20rem;
+        min-height: 3.2rem;
+    }
+
     &__title {
         font-size: 1.6rem;
         font-weight: 600;
+
+        @include breakpoint($extra-small) {
+            font-size: 1.066rem;
+        }
     }
 
     &__counter {
@@ -19,10 +38,20 @@
         font-size: .8rem;
         background-color: $gray;
         border-radius: .5em;
+
+        @include breakpoint($extra-small) {
+            font-size: .666rem;
+            width: 3.2em;
+            height: 1.6em;
+        }
     }
 
     &__text {
-        font-size: 1.06rem;
         margin-top: .4em;
+        font-size: 1.06rem;
+
+        @include breakpoint($extra-small) {
+            font-size: .8rem;
+        }
     }
 }

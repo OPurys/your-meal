@@ -1,8 +1,8 @@
 @import "vars";
+@import "mixins";
 
 // Bootstrap
 @import "bootstrap/functions";
-@import "bootstrap/mixins";
 @import "bootstrap/bootstrap-utilities";
 @import "bootstrap/bootstrap-reboot";
 @import "bootstrap/containers";
@@ -42,7 +42,6 @@ h6 {
 @import "blocks/modal";
 @import "blocks/form";
 @import "blocks/modal-inner";
-
 
 // Helpers
 @import "blocks/helpers";

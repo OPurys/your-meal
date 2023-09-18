@@ -14,14 +14,39 @@
     &__dialog {
         position: relative;
         margin: auto;
-    
+
         width: 100%;
+        height: 100%;
         max-width: 45.6rem;
-    
+        max-height: 28.8rem;
+
         background-color: $bg-gray;
         border-radius: 1.6rem;
+        overflow: auto;
+
+        @include breakpoint($extra-small) {
+            max-width: 34.93rem;
+            max-height: 22.73rem;
+        }
+
+        @include breakpoint($mobile) {
+            max-width: 21.33rem;
+            max-height: 46.93rem;
+
+            border-radius: 0;
+        }
+
+        &--height {
+            @include breakpoint($extra-small) {
+                max-height: 21.6rem;
+            }
+
+            @include breakpoint($mobile) {
+                max-height: 46.93rem;
+            }
+        }
     }
-    
+
     &__left {
         display: flex;
         justify-content: center;
@@ -32,17 +57,36 @@
         background-color: $yellow-orange;
         border-top-left-radius: 1.6rem;
         border-bottom-left-radius: 1.6rem;
+
+        @include breakpoint($extra-small) {
+            display: none;
+        }
     }
 
     &__right {
         padding: 2.93rem 1.6rem 1.6rem;
         width: 50%;
+
+        @include breakpoint($extra-small) {
+            padding: 1.33rem 1.06rem 1.93rem;
+            width: 63.33%;
+        }
+
+        @include breakpoint($mobile) {
+            padding: 2.133rem .666rem;
+            width: 100%;
+        }
     }
 
     &__title {
         margin-bottom: .66em;
-        
+
         font-size: 1.6rem;
         font-weight: 600;
+
+        @include breakpoint($extra-small) {
+            margin-bottom: 1.12em;
+            font-size: 1.06rem;
+        }
     }
 }
