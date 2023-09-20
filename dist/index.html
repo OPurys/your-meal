@@ -42,33 +42,33 @@
         <div class="menu">
             <div class="container">
                 <nav class="menu__list">
-                    <a class="menu__link active" href="#">
+                    <a class="menu__link active" href="#" data-filter="burger">
                         <img class="menu__icon" src="img\menu\menu-1.svg" alt="burger">Бургеры
                     </a>
-                    <a class="menu__link" href="#">
+                    <a class="menu__link" href="#" data-filter="snacks">
                         <img class="menu__icon" src="img\menu\menu-2.svg" alt="snacks">Закуски
                     </a>
-                    <a class="menu__link" href="#">
+                    <a class="menu__link" href="#" data-filter="hotdog">
                         <img class="menu__icon" src="img\menu\menu-3.svg" alt="hotdog">Хот-доги
                     </a>
-                    <a class="menu__link" href="#">
+                    <a class="menu__link" href="#" data-filter="combo">
                         <img class="menu__icon" src="img\menu\menu-4.svg" alt="combo">Комбо
                     </a>
-                    <a class="menu__link" href="#">
+                    <a class="menu__link" href="#" data-filter="shawarma">
                         <img class="menu__icon" src="img\menu\menu-5.svg" alt="
                             shawarma">Шаурма
                     </a>
-                    <a class="menu__link" href="#">
+                    <a class="menu__link" href="#" data-filter="pizza">
                         <img class="menu__icon" src="img\menu\menu-6.svg" alt="pizza">Пицца
                     </a>
-                    <a class="menu__link" href="#">
+                    <a class="menu__link" href="#" data-filter="wok">
                         <img class="menu__icon" src="img\menu\menu-7.svg" alt="wok">Вок
                     </a>
-                    <a class="menu__link" href="#">
+                    <a class="menu__link" href="#" data-filter="dessert">
                         <img class="menu__icon" src="img\menu\menu-8.svg" alt="
                             dessert">Десерты
                     </a>
-                    <a class="menu__link" href="#">
+                    <a class="menu__link" href="#" data-filter="sauces">
                         <img class="menu__icon" src="img\menu\menu-9.svg" alt="
                             sauces">Соусы
                     </a>
@@ -80,9 +80,15 @@
         <section class="products">
             <div class="container-xl">
 
-                <h2 class="products__title">Бургеры</h2>
-                <h2 class="products__title hidden">Закуски</h2>
-                <h2 class="products__title hidden">Хот-доги</h2>
+                <h2 class="products__title" data-title="burger">Бургеры</h2>
+                <h2 class="products__title hidden" data-title="snacks">Закуски</h2>
+                <h2 class="products__title hidden" data-title="hotdog">Хот-доги</h2>
+                <h2 class="products__title hidden" data-title="combo">Комбо</h2>
+                <h2 class="products__title hidden" data-title="shawarma">Шаурма</h2>
+                <h2 class="products__title hidden" data-title="pizza">Пицца</h2>
+                <h2 class="products__title hidden" data-title="wok">Вок</h2>
+                <h2 class="products__title hidden" data-title="dessert">Десерты</h2>
+                <h2 class="products__title hidden" data-title="sauces">Соусы</h2>
 
                 <!-- Products__inner -->
                 <div class="products__inner">
@@ -125,49 +131,49 @@
                                 </div>
                                 <div class="order__collapse d-flex align-items-center">Свернуть</div>
                             </div>
-                                
+
                         </div> <!-- /.order -->
                     </div> <!-- /.basket -->
 
                     <!-- Products__items -->
                     <div class="products__items">
                         <!-- Бургеры -->
-                        <div class="products__item">
+                        <div class="products__item" data-category="burger">
                             <img class="img products__img" src="img\products\burgers\burger-1.jpg" alt="burger">
                             <div class="products__price">345₴</div>
                             <div class="products__name">Мясная бомба</div>
                             <div class="products__weight">520г</div>
                             <button class="btn" type="button">Добавить</button>
                         </div>
-                        <div class="products__item">
+                        <div class="products__item" data-category="burger">
                             <img class="img products__img" src="img\products\burgers\burger-3.jpg" alt="burger">
                             <div class="products__price">240₴</div>
                             <div class="products__name">Тяжелый удар</div>
                             <div class="products__weight">470г</div>
                             <button class="btn" type="button">Добавить</button>
                         </div>
-                        <div class="products__item">
+                        <div class="products__item" data-category="burger">
                             <img class="img products__img" src="img\products\burgers\burger-2.jpg" alt="burger">
                             <div class="products__price">275₴</div>
                             <div class="products__name">Супер сырный</div>
                             <div class="products__weight">512г</div>
                             <button class="btn" type="button">Добавить</button>
                         </div>
-                        <div class="products__item">
+                        <div class="products__item" data-category="burger">
                             <img class="img products__img" src="img\products\burgers\burger-4.jpg" alt="burger">
                             <div class="products__price">225₴</div>
                             <div class="products__name">Вечная классика</div>
                             <div class="products__weight">450г</div>
                             <button class="btn" type="button">Добавить</button>
                         </div>
-                        <div class="products__item">
+                        <div class="products__item" data-category="burger">
                             <img class="img products__img" src="img\products\burgers\burger-3.jpg" alt="burger">
                             <div class="products__price">320₴</div>
                             <div class="products__name">Сытный</div>
                             <div class="products__weight">580г</div>
                             <button class="btn" type="button">Добавить</button>
                         </div>
-                        <div class="products__item">
+                        <div class="products__item" data-category="burger">
                             <img class="img products__img" src="img\products\burgers\burger-6.jpg" alt="burger">
                             <div class="products__price">280₴</div>
                             <div class="products__name">Итальянский</div>
@@ -176,21 +182,21 @@
                         </div>
 
                         <!-- Закуски -->
-                        <div class="products__item hidden">
+                        <div class="products__item hidden" data-category="snacks">
                             <img class="img products__img" src="img\products\snacks\photo-1.jpg" alt="snacks">
                             <div class="products__price">125₴</div>
                             <div class="products__name">Начос</div>
                             <div class="products__weight">220г</div>
                             <button class="btn" type="button">Добавить</button>
                         </div>
-                        <div class="products__item hidden">
+                        <div class="products__item hidden" data-category="snacks">
                             <img class="img products__img" src="img\products\snacks\photo-2.jpg" alt="snacks">
                             <div class="products__price">120₴</div>
                             <div class="products__name">Картошка фри</div>
                             <div class="products__weight">180г</div>
                             <button class="btn" type="button">Добавить</button>
                         </div>
-                        <div class="products__item hidden">
+                        <div class="products__item hidden" data-category="snacks">
                             <img class="img products__img" src="img\products\snacks\photo-3.jpg" alt="burger">
                             <div class="products__price">115₴</div>
                             <div class="products__name">Луковые кольца</div>
@@ -199,21 +205,21 @@
                         </div>
 
                         <!-- Хот-доги -->
-                        <div class="products__item hidden">
+                        <div class="products__item hidden" data-category="hotdog">
                             <img class="img products__img" src="img\products\hotdogs\photo-1.jpg" alt="snacks">
                             <div class="products__price">145₴</div>
                             <div class="products__name">Домашний хот-дог</div>
                             <div class="products__weight">250г</div>
                             <button class="btn" type="button">Добавить</button>
                         </div>
-                        <div class="products__item hidden">
+                        <div class="products__item hidden" data-category="hotdog">
                             <img class="img products__img" src="img\products\hotdogs\photo-2.jpg" alt="snacks">
                             <div class="products__price">120₴</div>
                             <div class="products__name">Жгучий хот-дог</div>
                             <div class="products__weight">245г</div>
                             <button class="btn" type="button">Добавить</button>
                         </div>
-                        <div class="products__item hidden">
+                        <div class="products__item hidden" data-category="hotdog">
                             <img class="img products__img" src="img\products\hotdogs\photo-3.jpg" alt="snacks">
                             <div class="products__price">110₴</div>
                             <div class="products__name">Классический хот-дог</div>
