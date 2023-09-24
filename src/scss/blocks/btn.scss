@@ -6,6 +6,7 @@
 
     padding: 0;
     border: 0;
+    outline: 0;
     background: none;
 
     font-size: 1.06rem;
@@ -77,5 +78,32 @@
             margin-right: .533rem;
             max-width: 18.166em;
         }
+    }
+
+    &--collapse,
+    &--expand {
+        width: auto;
+        height: auto;
+
+        font-size: .8rem;
+        color: $metallic;
+        border-radius: none;
+        background: none;
+        cursor: pointer;
+
+        transition: opacity .2s linear;
+
+        &:hover {
+            background: none !important;
+            opacity: .7;
+        }
+
+        @include breakpoint($extra-small) {
+            font-size: .666rem;
+        }
+    }
+
+    &--expand {
+        margin-top: .466rem;
     }
 }

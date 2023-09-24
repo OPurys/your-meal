@@ -14,6 +14,7 @@
         height: auto;
         position: absolute;
         top: 0;
+        z-index: 1;
     }
 
     @include breakpoint($extra-small) {

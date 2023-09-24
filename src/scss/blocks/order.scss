@@ -44,12 +44,4 @@
     &__svg {
         margin-right: .67em;
     }
-
-    &__collapse {
-        color: $metallic;
-
-        @include breakpoint($extra-small) {
-            font-size: .666rem;
-        }
-    }
 }

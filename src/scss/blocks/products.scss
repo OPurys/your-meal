@@ -1,5 +1,5 @@
 .products {
-    padding-bottom: 4.666rem;
+    padding: 5rem 0 4.666rem;
 
     @include breakpoint($large-tablets) {
         padding-top: 9rem;
@@ -7,26 +7,7 @@
     }
 
     @include breakpoint($extra-small) {
-        padding-top: 6rem;
-        padding-bottom: 4rem;
-    }
-
-    &__title {
-        margin-bottom: .6em;
-        width: 100%;
-        max-width: 12.38em;
-
-        font-size: 2.66rem;
-        font-weight: 600;
-        text-align: right;
-
-        @include breakpoint($large-tablets) {
-            text-align: left;
-        }
-
-        @include breakpoint($extra-small) {
-            font-size: 1.866rem;
-        }
+        padding: 6rem 0 4rem;
     }
 
     &__inner {
@@ -34,8 +15,31 @@
     }
 
     &__items {
+        position: relative;
         display: flex;
         flex-wrap: wrap;
+
+        @include breakpoint($large-tablets) {
+            padding-top: 3rem;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        top: -5rem;
+        left: 0;
+
+        font-size: 2.66rem;
+        font-weight: 600;
+
+        @include breakpoint($large-tablets) {
+            top: -1rem;
+        }
+
+        @include breakpoint($extra-small) {
+            font-size: 1.866rem;
+            top: 0;
+        }
     }
 
     &__item {

@@ -7169,7 +7169,7 @@ h6 {
 }
 
 .products {
-  padding-bottom: 4.666rem;
+  padding: 5rem 0 4.666rem;
 }
 @media screen and (max-width: 1023px) {
   .products {
@@ -7179,34 +7179,39 @@ h6 {
 }
 @media screen and (max-width: 768px) {
   .products {
-    padding-top: 6rem;
-    padding-bottom: 4rem;
-  }
-}
-.products__title {
-  margin-bottom: 0.6em;
-  width: 100%;
-  max-width: 12.38em;
-  font-size: 2.66rem;
-  font-weight: 600;
-  text-align: right;
-}
-@media screen and (max-width: 1023px) {
-  .products__title {
-    text-align: left;
-  }
-}
-@media screen and (max-width: 768px) {
-  .products__title {
-    font-size: 1.866rem;
+    padding: 6rem 0 4rem;
   }
 }
 .products__inner {
   display: flex;
 }
 .products__items {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
+}
+@media screen and (max-width: 1023px) {
+  .products__items {
+    padding-top: 3rem;
+  }
+}
+.products__title {
+  position: absolute;
+  top: -5rem;
+  left: 0;
+  font-size: 2.66rem;
+  font-weight: 600;
+}
+@media screen and (max-width: 1023px) {
+  .products__title {
+    top: -1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .products__title {
+    font-size: 1.866rem;
+    top: 0;
+  }
 }
 .products__item {
   margin-bottom: 2rem;
@@ -7316,6 +7321,7 @@ h6 {
     height: auto;
     position: absolute;
     top: 0;
+    z-index: 1;
   }
 }
 @media screen and (max-width: 768px) {
@@ -7398,14 +7404,6 @@ h6 {
 .order__svg {
   margin-right: 0.67em;
 }
-.order__collapse {
-  color: #B1B1B1;
-}
-@media screen and (max-width: 768px) {
-  .order__collapse {
-    font-size: 0.666rem;
-  }
-}
 
 .counter {
   position: relative;
@@ -7448,6 +7446,7 @@ h6 {
   height: 2.5em;
   padding: 0;
   border: 0;
+  outline: 0;
   background: none;
   font-size: 1.06rem;
   border-radius: 0.75em;
@@ -7510,6 +7509,28 @@ h6 {
     margin-right: 0.533rem;
     max-width: 18.166em;
   }
+}
+.btn--collapse, .btn--expand {
+  width: auto;
+  height: auto;
+  font-size: 0.8rem;
+  color: #B1B1B1;
+  border-radius: none;
+  background: none;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+}
+.btn--collapse:hover, .btn--expand:hover {
+  background: none !important;
+  opacity: 0.7;
+}
+@media screen and (max-width: 768px) {
+  .btn--collapse, .btn--expand {
+    font-size: 0.666rem;
+  }
+}
+.btn--expand {
+  margin-top: 0.466rem;
 }
 
 .footer {
@@ -7606,7 +7627,7 @@ h6 {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
 }
 .modal__dialog {
   position: relative;
