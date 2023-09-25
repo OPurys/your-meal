@@ -32,16 +32,20 @@
                             <label class="form__label" for="radio2">Доставка</label>
                         </div>
                     </div>
-                    <div class="form__group">
-                        <input class="form__input" type="text" name="text" placeholder="Улица, дом, квартира" required>
-                    </div>
 
-                    <div class="d-flex">
-                        <div class="form__group-half">
-                            <input class="form__input" type="text" name="text" placeholder="Этаж" required>
+                    <div class="form__radio-checked">
+                        <div class="form__group">
+                            <input class="form__input" type="text" name="text" placeholder="Улица, дом, квартира"
+                                required>
                         </div>
-                        <div class="form__group-half">
-                            <input class="form__input" type="text" name="text" placeholder="Домофон">
+
+                        <div class="d-flex">
+                            <div class="form__group-half">
+                                <input class="form__input" type="text" name="text" placeholder="Этаж" required>
+                            </div>
+                            <div class="form__group-half">
+                                <input class="form__input" type="text" name="text" placeholder="Домофон">
+                            </div>
                         </div>
                     </div>
                     <div class="form__group-button">
@@ -55,10 +59,10 @@
 </div> <!-- /.modal -->
 
 <!-- Modal -->
-<div class="modal hidden" id="buy">
+<div class="modal hidden" id="add">
     <div class="modal__dialog  modal__dialog--height">
 
-        <button class="btn  btn--close" type="button" data-close="#buy">
+        <button class="btn  btn--close" type="button" data-close="#add">
             <img src="img/modal/close.svg" alt="close">
         </button>
 
@@ -105,8 +109,10 @@
 
             <div class="d-flex flex-wrap">
                 <button class="btn btn--orange btn--modal" type="button">Добавить</button>
-                <div class="counter d-flex justify-content-center align-items-center">
-                    1
+                <div class="counter d-flex justify-content-between align-items-center">
+                    <button class="counter__minus" type="button">-</button>
+                    <div class="counter__result">1</div>
+                    <button class="counter__plus" type="button">+</button>
                 </div>
                 <div class="modal-inner__price d-flex align-items-center">
                     345₴

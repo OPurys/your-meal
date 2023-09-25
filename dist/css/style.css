@@ -7406,6 +7406,7 @@ h6 {
 }
 
 .counter {
+  padding: 0 1em;
   position: relative;
   font-size: 1.067rem;
   width: 100%;
@@ -7414,23 +7415,15 @@ h6 {
   background-color: #F2F2F3;
   border-radius: 0.75em;
 }
-.counter::before {
-  content: "";
-  position: absolute;
-  left: 0.8rem;
-  width: 0.46rem;
-  height: 1.46rem;
-  cursor: pointer;
-  background: url("../img/modal-inner/minus.svg") center no-repeat;
+.counter__minus, .counter__plus {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
 }
-.counter::after {
-  content: "";
-  position: absolute;
-  right: 0.8rem;
-  width: 0.46rem;
-  height: 1.46rem;
-  cursor: pointer;
-  background: url("../img/modal-inner/plus.svg") center no-repeat;
+.counter__minus:active, .counter__plus:active {
+  color: #FF7020;
 }
 @media screen and (max-width: 768px) {
   .counter {

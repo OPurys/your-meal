@@ -108,9 +108,41 @@ modalsDialog.forEach(el => el.addEventListener('click', (e) => {
 }));
 
 
+// Radio buttons
+
+const radio1 = document.getElementById('radio1');
+const radio2 = document.getElementById('radio2');
+const element = document.querySelector('.form__radio-checked');
+
+radio1.addEventListener('click', () => {
+    element.classList.add('visibility');
+});
+
+radio2.addEventListener('click', () => {
+    element.classList.remove('visibility');
+});
 
 
+// Counter in modal window
 
+const modalAdd = document.getElementById('add');
+const modalResult = modalAdd.querySelector('.counter__result');
+const modalCounterMinus = modalAdd.querySelector('.counter__minus');
+const modalCounterPlus = modalAdd.querySelector('.counter__plus');
+
+let count = 1;
+
+modalCounterPlus.addEventListener('click', () => {
+    count++;
+    modalResult.innerHTML = count;
+});
+
+modalCounterMinus.addEventListener('click', () => {
+    if (count > 1) {
+        count--;
+        modalResult.innerHTML = count;
+    }
+});
 
 
 
