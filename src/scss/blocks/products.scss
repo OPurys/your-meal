@@ -15,6 +15,8 @@
     }
 
     &__items {
+        height: 100%;
+
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -46,8 +48,10 @@
         margin-bottom: 2rem;
         margin-right: 2rem;
         padding: .8rem .8rem;
+
         width: 100%;
         max-width: 20rem;
+        height: 27.313rem;
 
         background-color: $white;
         border-radius: 1.2rem;
@@ -57,6 +61,8 @@
         }
 
         @include breakpoint($desktops) {
+            height: auto;
+
             &:nth-of-type(3n) {
                 margin-right: 2rem;
             }
@@ -100,6 +106,12 @@
     &__img {
         margin-bottom: 1.066rem;
 
+        transition: transform .2s linear;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
         @include breakpoint($extra-small) {
             margin-bottom: .666rem;
         }
@@ -121,6 +133,10 @@
     &__name {
         margin-bottom: 1.81em;
         font-size: 1.06rem;
+
+        @include breakpoint($large-tablets) {
+            font-size: .9rem;
+        }
 
         @include breakpoint($extra-small) {
             margin-bottom: 1.333em;

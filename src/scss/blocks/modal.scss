@@ -24,6 +24,26 @@
         border-radius: 1.6rem;
         overflow: auto;
 
+        /* width */
+        &::-webkit-scrollbar {
+            width: 1px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: transparent;
+        }
+
         @include breakpoint($extra-small) {
             max-width: 34.93rem;
             max-height: 22.73rem;

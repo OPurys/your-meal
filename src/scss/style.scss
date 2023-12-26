@@ -30,6 +30,11 @@ h6 {
     margin: 0;
 }
 
+::selection {
+    background-color: $orange;
+    color: $white;
+}
+
 // Blocks
 @import "blocks/header";
 @import "blocks/menu";
@@ -40,6 +45,7 @@ h6 {
 @import "blocks/btn";
 @import "blocks/footer";
 @import "blocks/modal";
+@import "blocks/modal-counter";
 @import "blocks/form";
 @import "blocks/modal-inner";
 

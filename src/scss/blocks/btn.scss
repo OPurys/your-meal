@@ -16,6 +16,16 @@
 
     transition: background-color .2s linear;
 
+    &.active {
+        color: $white;
+        background-color: $orange;
+    }
+
+    &.active--modal {
+        color: $white;
+        background-color: greenyellow;
+    }
+
     @include breakpoint($extra-small) {
         font-size: .8rem;
     }

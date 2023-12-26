@@ -7008,6 +7008,11 @@ h6 {
   margin: 0;
 }
 
+::selection {
+  background-color: #FF7020;
+  color: #fff;
+}
+
 .header {
   padding: 1.6rem 0 4.2rem;
   background: url("../img/header/bg.png") bottom no-repeat;
@@ -7186,6 +7191,7 @@ h6 {
   display: flex;
 }
 .products__items {
+  height: 100%;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -7219,6 +7225,7 @@ h6 {
   padding: 0.8rem 0.8rem;
   width: 100%;
   max-width: 20rem;
+  height: 27.313rem;
   background-color: #fff;
   border-radius: 1.2rem;
 }
@@ -7226,6 +7233,9 @@ h6 {
   margin-right: 0;
 }
 @media screen and (max-width: 1400px) {
+  .products__item {
+    height: auto;
+  }
   .products__item:nth-of-type(3n) {
     margin-right: 2rem;
   }
@@ -7264,6 +7274,10 @@ h6 {
 }
 .products__img {
   margin-bottom: 1.066rem;
+  transition: transform 0.2s linear;
+}
+.products__img:hover {
+  transform: scale(1.03);
 }
 @media screen and (max-width: 768px) {
   .products__img {
@@ -7285,6 +7299,11 @@ h6 {
 .products__name {
   margin-bottom: 1.81em;
   font-size: 1.06rem;
+}
+@media screen and (max-width: 1023px) {
+  .products__name {
+    font-size: 0.9rem;
+  }
 }
 @media screen and (max-width: 768px) {
   .products__name {
@@ -7427,7 +7446,7 @@ h6 {
 }
 @media screen and (max-width: 768px) {
   .counter {
-    max-width: 6.166em;
+    max-width: 6.1em;
     font-size: 0.8rem;
   }
 }
@@ -7445,6 +7464,14 @@ h6 {
   border-radius: 0.75em;
   background-color: #F2F2F3;
   transition: background-color 0.2s linear;
+}
+.btn.active {
+  color: #fff;
+  background-color: #FF7020;
+}
+.btn.active--modal {
+  color: #fff;
+  background-color: greenyellow;
 }
 @media screen and (max-width: 768px) {
   .btn {
@@ -7632,6 +7659,22 @@ h6 {
   background-color: #f9f9f9;
   border-radius: 1.6rem;
   overflow: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.modal__dialog::-webkit-scrollbar {
+  width: 1px;
+}
+.modal__dialog::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal__dialog::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.modal__dialog::-webkit-scrollbar-thumb:hover {
+  background: transparent;
 }
 @media screen and (max-width: 768px) {
   .modal__dialog {
@@ -7695,6 +7738,33 @@ h6 {
   .modal__title {
     margin-bottom: 1.12em;
     font-size: 1.06rem;
+  }
+}
+
+.modal-counter {
+  padding: 0 1em;
+  position: relative;
+  font-size: 1.067rem;
+  width: 100%;
+  max-width: 5.25em;
+  height: 2.5em;
+  background-color: #F2F2F3;
+  border-radius: 0.75em;
+}
+.modal-counter__minus, .modal-counter__plus {
+  display: inline-block;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+}
+.modal-counter__minus:active, .modal-counter__plus:active {
+  color: #FF7020;
+}
+@media screen and (max-width: 768px) {
+  .modal-counter {
+    max-width: 6.1em;
+    font-size: 0.8rem;
   }
 }
 
@@ -7810,6 +7880,9 @@ h6 {
 
 .modal-inner {
   padding: 1.6rem 1.6rem 2.4rem;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 768px) {
   .modal-inner {
@@ -7882,7 +7955,7 @@ h6 {
 }
 @media screen and (max-width: 480px) {
   .modal-inner__right {
-    margin-bottom: 6.533rem;
+    margin-bottom: 3rem;
     width: 100%;
   }
 }

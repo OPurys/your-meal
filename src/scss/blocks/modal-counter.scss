@@ -1,0 +1,31 @@
+.modal-counter {
+    padding: 0 1em;
+    position: relative;
+    font-size: 1.067rem;
+
+    width: 100%;
+    max-width: 5.25em;
+    height: 2.5em;
+
+    background-color: $gray;
+    border-radius: .75em;
+
+    &__minus,
+    &__plus {
+        display: inline-block;
+
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: none;
+
+        &:active {
+            color: $orange;
+        }
+    }
+
+    @include breakpoint($extra-small) {
+        max-width: 6.1em;
+        font-size: .8rem;
+    }
+}
