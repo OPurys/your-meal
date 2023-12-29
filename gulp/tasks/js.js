@@ -19,6 +19,8 @@ export const js = () => {
 
 export function scripts() {
     return app.gulp.src([ // Берем файлы из источников
+        'src/js/filter.js',
+        'src/js/modals.js',
         'src/js/constants.js',
         'src/js/utils.js',
         'src/js/index.js',

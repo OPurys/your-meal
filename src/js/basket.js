@@ -84,27 +84,7 @@ function renderProductsBasket(arr) {
 }
 
 
-// Свернуть / Развернуть корзину (Активно при наличии товара в корзине)
-const collapse = document.querySelector('.btn--collapse');
-const expand = document.querySelector('.btn--expand');
 
-visibilityToggle();
-
-collapse.addEventListener('click', () => {
-    order.classList.add('hidden');
-    visibilityToggle();
-});
-
-expand.addEventListener('click', () => {
-    order.classList.remove('hidden');
-    visibilityToggle();
-});
-
-function visibilityToggle() {
-    if (order.classList.contains('hidden')) {
-        expand.classList.remove('visibility');
-    } else { expand.classList.add('visibility'); }
-}
 
 
 // Радио кнопки в форме оформления заказа
@@ -202,6 +182,28 @@ function calcTotalPriceOrder() {
 
         freeDelivery();
     });
+}
+
+// Свернуть / Развернуть корзину (Активно при наличии товара в корзине)
+const collapse = document.querySelector('.btn--collapse');
+const expand = document.querySelector('.btn--expand');
+
+visibilityToggle();
+
+collapse.addEventListener('click', () => {
+    order.classList.add('hidden');
+    visibilityToggle();
+});
+
+expand.addEventListener('click', () => {
+    order.classList.remove('hidden');
+    visibilityToggle();
+});
+
+function visibilityToggle() {
+    if (order.classList.contains('hidden')) {
+        expand.classList.remove('visibility');
+    } else { expand.classList.add('visibility'); }
 }
 
 

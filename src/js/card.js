@@ -38,6 +38,7 @@ function loadProductDetails(data) {
 
     checkingRelevanceValueBasket(data);
 
+
     document.addEventListener('click', event => {
 
         if (event.target.dataset.imgId) {
@@ -179,7 +180,7 @@ function calcSubtotalPriceProduct() {
 
     const modalCounterResult = document.querySelector('.modal-counter__result');
     const modalInnerPrice = document.querySelector('.modal-inner__price');
-    
+
     let subtotalPriceEl = modalCounterResult.textContent * parseInt(modalInnerPrice.textContent);
 
     modalInnerPrice.textContent = subtotalPriceEl + '₴';
@@ -237,60 +238,5 @@ function checkingActiveButtonInModal() {
 
     modalButtonAdd.classList.toggle('active--modal', isInBasket);
     modalButtonAdd.textContent = isInBasket ? 'Добавлено' : 'Добавить';
-}
-
-
-// Открытие и закрытие модальных окон 
-function modal() {
-
-    const body = document.body;
-    const modals = document.querySelectorAll('.modal');
-    const modalsDialog = document.querySelectorAll('.modal__dialog');
-    const modalBtn = document.querySelectorAll('[data-modal]');
-    const modalCloses = document.querySelectorAll('[data-close]');
-    const modalButtonAdd = modalAdd.querySelectorAll('[data-modal-add]');
-
-    // Открытие модального окна
-    modalBtn.forEach(btn => btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        let modalId = btn.getAttribute('data-modal');
-
-        document.querySelector(modalId).classList.remove('hidden');
-        body.classList.add('no-scroll');
-    }));
-
-    // Закрытие модального окна при нажатии на крестик
-    modalCloses.forEach(el => el.addEventListener('click', () => {
-        let modalParent = el.getAttribute('data-close');
-
-        document.querySelector(modalParent).classList.add('hidden');
-        body.classList.remove('no-scroll');
-    }));
-
-    // Закрытие модального окна при нажатии на кнопку Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            modals.forEach((mdl => mdl.classList.add('hidden')));
-            body.classList.remove('no-scroll');
-        }
-    });
-
-    // Закрытие модального окна при клике вне диалогового окна
-    modals.forEach(mdl => mdl.addEventListener('click', () => {
-        mdl.classList.add('hidden');
-        body.classList.remove('no-scroll');
-    }));
-
-    modalsDialog.forEach(el => el.addEventListener('click', (e) => {
-        e.stopPropagation();
-    }));
-
-    // Закрытие модального окна при нажатии на кнопку Добавить
-    modalButtonAdd.forEach(btn => btn.addEventListener('click', () => {
-        setTimeout(() => {
-            modalAdd.classList.add('hidden');
-            body.classList.remove('no-scroll');
-        }, 500);
-    }));
 }
 

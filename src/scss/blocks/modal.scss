@@ -9,7 +9,10 @@
     left: 0;
     z-index: 1000;
 
-    background-color: rgba($black, 0.95);
+    background-color: rgba($black, 0.6);
+
+    transform: scale(0);
+    transition: transform 0.4s linear;
 
     &__dialog {
         position: relative;
