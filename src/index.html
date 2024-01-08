@@ -1,113 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('html/head.html', {
-"title":"Главная"
-})
+  @@include('html/head.html', { "title":"Главная" })
 
-<body>
-
+  <body>
     <!-- Header -->
     @@include('html/header.html', {})
 
     <main>
+      <!-- Menu -->
+      <div class="menu">
+        <div class="container">
+          <nav class="menu__list">
+            <a class="menu__link active" href="#" data-filter="burger">
+              <img
+                class="menu__icon"
+                src="img\menu\menu-1.svg"
+                alt="burger"
+              />Бургеры
+            </a>
+            <a class="menu__link" href="#" data-filter="snacks">
+              <img
+                class="menu__icon"
+                src="img\menu\menu-2.svg"
+                alt="snacks"
+              />Закуски
+            </a>
+            <a class="menu__link" href="#" data-filter="hotdog">
+              <img
+                class="menu__icon"
+                src="img\menu\menu-3.svg"
+                alt="hotdog"
+              />Хот-доги
+            </a>
+            <a class="menu__link" href="#" data-filter="combo">
+              <img
+                class="menu__icon"
+                src="img\menu\menu-4.svg"
+                alt="combo"
+              />Комбо
+            </a>
+            <a class="menu__link" href="#" data-filter="shawarma">
+              <img
+                class="menu__icon"
+                src="img\menu\menu-5.svg"
+                alt="
+                            shawarma"
+              />Шаурма
+            </a>
+            <a class="menu__link" href="#" data-filter="pizza">
+              <img
+                class="menu__icon"
+                src="img\menu\menu-6.svg"
+                alt="pizza"
+              />Пицца
+            </a>
+            <a class="menu__link" href="#" data-filter="wok">
+              <img class="menu__icon" src="img\menu\menu-7.svg" alt="wok" />Вок
+            </a>
+            <a class="menu__link" href="#" data-filter="dessert">
+              <img
+                class="menu__icon"
+                src="img\menu\menu-8.svg"
+                alt="
+                            dessert"
+              />Десерты
+            </a>
+            <a class="menu__link" href="#" data-filter="sauces">
+              <img
+                class="menu__icon"
+                src="img\menu\menu-9.svg"
+                alt="
+                            sauces"
+              />Соусы
+            </a>
+          </nav>
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.menu -->
 
-        <!-- Menu -->
-        <div class="menu">
-            <div class="container">
-                <nav class="menu__list">
-                    <a class="menu__link active" href="#" data-filter="burger">
-                        <img class="menu__icon" src="img\menu\menu-1.svg" alt="burger">Бургеры
-                    </a>
-                    <a class="menu__link" href="#" data-filter="snacks">
-                        <img class="menu__icon" src="img\menu\menu-2.svg" alt="snacks">Закуски
-                    </a>
-                    <a class="menu__link" href="#" data-filter="hotdog">
-                        <img class="menu__icon" src="img\menu\menu-3.svg" alt="hotdog">Хот-доги
-                    </a>
-                    <a class="menu__link" href="#" data-filter="combo">
-                        <img class="menu__icon" src="img\menu\menu-4.svg" alt="combo">Комбо
-                    </a>
-                    <a class="menu__link" href="#" data-filter="shawarma">
-                        <img class="menu__icon" src="img\menu\menu-5.svg" alt="
-                            shawarma">Шаурма
-                    </a>
-                    <a class="menu__link" href="#" data-filter="pizza">
-                        <img class="menu__icon" src="img\menu\menu-6.svg" alt="pizza">Пицца
-                    </a>
-                    <a class="menu__link" href="#" data-filter="wok">
-                        <img class="menu__icon" src="img\menu\menu-7.svg" alt="wok">Вок
-                    </a>
-                    <a class="menu__link" href="#" data-filter="dessert">
-                        <img class="menu__icon" src="img\menu\menu-8.svg" alt="
-                            dessert">Десерты
-                    </a>
-                    <a class="menu__link" href="#" data-filter="sauces">
-                        <img class="menu__icon" src="img\menu\menu-9.svg" alt="
-                            sauces">Соусы
-                    </a>
-                </nav>
-            </div> <!-- /.container -->
-        </div> <!-- /.menu -->
+      <!-- Products -->
+      <section class="products">
+        <div class="container-xl">
+          <!-- Products__inner -->
+          <div class="products__inner">
+            <!-- Basket -->
+            <div class="basket">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="basket__title">Корзина</div>
+                <div
+                  class="basket__counter d-flex justify-content-center align-items-center"
+                >
+                  0
+                </div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="basket__text visibility">
+                  Тут пока пусто :&lpar;
+                </div>
+                <button class="btn btn--expand" type="button">
+                  Развернуть
+                </button>
+              </div>
 
-        <!-- Products -->
-        <section class="products">
-            <div class="container-xl">
+              <!-- Order -->
+              <div class="order">
+                <div class="order__top"></div>
 
-                <!-- Products__inner -->
-                <div class="products__inner">
-                    <!-- Basket -->
-                    <div class="basket">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="basket__title">Корзина</div>
-                            <div class="basket__counter d-flex justify-content-center align-items-center">0
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <div class="basket__text visibility">Тут пока пусто :&lpar;</div>
-                            <button class="btn btn--expand" type="button">Развернуть</button>
-                        </div>
+                <div class="order__bottom">
+                  <div class="order__block d-flex justify-content-between">
+                    <div class="order__total">Итого</div>
+                    <div class="order__sum">0₴</div>
+                  </div>
 
-                        <!-- Order -->
-                        <div class="order">
-                            <div class="order__top">
-                            </div>
+                  <button
+                    class="btn btn--order"
+                    type="button"
+                    data-modal="#order"
+                  >
+                    Оформить заказ
+                  </button>
 
-                            <div class="order__bottom">
-                                <div class="order__block d-flex justify-content-between">
-                                    <div class="order__total">Итого</div>
-                                    <div class="order__sum">0₴</div>
-                                </div>
+                  <div class="d-flex justify-content-between">
+                    <div
+                      class="order__delivery d-flex align-items-center visibility"
+                    >
+                      <img
+                        class="order__svg"
+                        src="img\order\delivery.svg"
+                        alt="img"
+                      />
+                      Бесплатная доставка
+                    </div>
+                    <button
+                      class="btn btn--collapse d-flex align-items-center"
+                      type="button"
+                    >
+                      Свернуть
+                    </button>
+                  </div>
+                </div>
+                <!-- /.order__bottom -->
+              </div>
+              <!-- /.order -->
+            </div>
+            <!-- /.basket -->
 
-                                <button class="btn btn--order" type="button" data-modal="#order">Оформить заказ</button>
-
-                                <div class="d-flex justify-content-between">
-                                    <div class="order__delivery d-flex align-items-center visibility">
-                                        <img class="order__svg" src="img\order\delivery.svg" alt="img">
-                                        Бесплатная доставка
-                                    </div>
-                                    <button class="btn  btn--collapse d-flex align-items-center"
-                                        type="button">Свернуть</button>
-                                </div>
-                            </div> <!-- /.order__bottom -->
-                        </div> <!-- /.order -->
-                    </div> <!-- /.basket -->
-
-                    <!-- Products__items -->
-                    <div class="products__items">
-
-                        <h2 class="products__title" data-title="burger">Бургеры</h2>
-                        <h2 class="products__title hidden" data-title="snacks">Закуски</h2>
-                        <h2 class="products__title hidden" data-title="hotdog">Хот-доги</h2>
-                        <h2 class="products__title hidden" data-title="combo">Комбо</h2>
-                        <h2 class="products__title hidden" data-title="shawarma">Шаурма</h2>
-                        <h2 class="products__title hidden" data-title="pizza">Пицца</h2>
-                        <h2 class="products__title hidden" data-title="wok">Вок</h2>
-                        <h2 class="products__title hidden" data-title="dessert">Десерты</h2>
-                        <h2 class="products__title hidden" data-title="sauces">Соусы</h2>
-                    </div> <!-- /.products__items -->
-                </div> <!-- /.products__inner -->
-            </div> <!-- /.container -->
-        </section>
+            <!-- Products__items -->
+            <div class="products__items">
+              <h2 class="products__title" data-title="burger">Бургеры</h2>
+              <h2 class="products__title hidden" data-title="snacks">
+                Закуски
+              </h2>
+              <h2 class="products__title hidden" data-title="hotdog">
+                Хот-доги
+              </h2>
+              <h2 class="products__title hidden" data-title="combo">Комбо</h2>
+              <h2 class="products__title hidden" data-title="shawarma">
+                Шаурма
+              </h2>
+              <h2 class="products__title hidden" data-title="pizza">Пицца</h2>
+              <h2 class="products__title hidden" data-title="wok">Вок</h2>
+              <h2 class="products__title hidden" data-title="dessert">
+                Десерты
+              </h2>
+              <h2 class="products__title hidden" data-title="sauces">Соусы</h2>
+            </div>
+            <!-- /.products__items -->
+          </div>
+          <!-- /.products__inner -->
+        </div>
+        <!-- /.container -->
+      </section>
     </main>
 
     <!-- Footer -->
@@ -118,6 +182,5 @@
 
     <!-- JS -->
     <script src="js/app.min.js" type="module" defer></script>
-</body>
-
+  </body>
 </html>
