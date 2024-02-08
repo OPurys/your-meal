@@ -1,96 +1,97 @@
 .header {
-    padding: 1.6rem 0 4.2rem;
-    background: url('../img/header/bg.png') bottom no-repeat;
-    background-size: cover;
+  margin-bottom: 2.666rem;
+  padding: 1.6rem 0 4.2rem;
+  background: url("../img/header/bg.png") bottom no-repeat;
+  background-size: cover;
+
+  @include breakpoint($extra-small) {
+    margin-bottom: 2rem;
+    padding: 1.6rem 0 3.366rem;
+  }
+
+  @include breakpoint($mobile) {
+    padding: 1.6rem 0 2.433rem;
+    background-size: 46.666rem 33.333rem;
+  }
+
+  &__intro {
+    margin-top: 3.33rem;
 
     @include breakpoint($extra-small) {
-        padding: 1.6rem 0 3.366rem;
+      margin-top: 2.785rem;
     }
 
     @include breakpoint($mobile) {
-        padding: 1.6rem 0 2.433rem;
-        background-size: 46.666rem 33.333rem;
+      margin-top: 1.6rem;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__img {
+    margin-right: 3.8rem;
+
+    @include breakpoint($large-tablets) {
+      margin-right: 2.524rem;
     }
 
-    &__intro {
-        margin-top: 3.33rem;
-
-        @include breakpoint($extra-small) {
-            margin-top: 2.785rem;
-        }
-
-        @include breakpoint($mobile) {
-            margin-top: 1.6rem;
-            flex-direction: column;
-            align-items: center;
-        }
+    @include breakpoint($extra-small) {
+      width: 11.763rem;
+      height: 13.578rem;
     }
 
-    &__img {
-        margin-right: 3.8rem;
+    @include breakpoint($mobile) {
+      margin-right: 0;
+      order: 1;
+    }
+  }
 
-        @include breakpoint($large-tablets) {
-            margin-right: 2.524rem;
-        }
+  &__inner {
+    margin-top: 1.266rem;
 
-        @include breakpoint($extra-small) {
-            width: 11.763rem;
-            height: 13.578rem;
-        }
-
-        @include breakpoint($mobile) {
-            margin-right: 0;
-            order: 1;
-        }
+    @include breakpoint($extra-small) {
+      margin-top: 0.533rem;
     }
 
-    &__inner {
-        margin-top: 1.266rem;
+    @include breakpoint($mobile) {
+      margin-top: 0;
+    }
+  }
 
-        @include breakpoint($extra-small) {
-            margin-top: .533rem;
-        }
+  &__title {
+    margin-bottom: 1em;
 
-        @include breakpoint($mobile) {
-            margin-top: 0;
-        }
+    font-size: 3.33rem;
+    font-weight: 800;
+    color: $white;
+
+    & span {
+      color: #ff5c00;
     }
 
-    &__title {
-        margin-bottom: 1em;
-
-        font-size: 3.33rem;
-        font-weight: 800;
-        color: $white;
-
-        & span {
-            color: #FF5C00;
-        }
-
-        @include breakpoint($extra-small) {
-            margin-bottom: .722em;
-            font-size: 2.4rem;
-        }
-
-        @include breakpoint($mobile) {
-            margin-bottom: .533em;
-            font-size: 2rem;
-            text-align: center;
-        }
+    @include breakpoint($extra-small) {
+      margin-bottom: 0.722em;
+      font-size: 2.4rem;
     }
 
-    &__subtext {
-        font-size: 1.06rem;
-        color: $white;
-
-        @include breakpoint($extra-small) {
-            font-size: .8rem;
-        }
-
-        @include breakpoint($mobile) {
-            margin-bottom: 3.148em;
-            text-align: center;
-        }
+    @include breakpoint($mobile) {
+      margin-bottom: 0.533em;
+      font-size: 2rem;
+      text-align: center;
     }
+  }
+
+  &__subtext {
+    font-size: 1.06rem;
+    color: $white;
+
+    @include breakpoint($extra-small) {
+      font-size: 0.8rem;
+    }
+
+    @include breakpoint($mobile) {
+      margin-bottom: 3.148em;
+      text-align: center;
+    }
+  }
 }
-

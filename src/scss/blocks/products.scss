@@ -1,159 +1,137 @@
 .products {
-    padding: 5rem 0 4.666rem;
+  padding-top: 5rem;
+
+  @include breakpoint($large-tablets) {
+    padding-top: 9rem;
+    position: relative;
+  }
+
+  @include breakpoint($extra-small) {
+    padding-top: 6rem;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__items {
+    height: 100%;
+
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
 
     @include breakpoint($large-tablets) {
-        padding-top: 9rem;
-        position: relative;
+      padding-top: 3rem;
     }
 
     @include breakpoint($extra-small) {
-        padding: 6rem 0 4rem;
+      gap: 1.333rem;
     }
 
-    &__inner {
-        display: flex;
+    @include breakpoint($mobile) {
+      gap: 0.666rem;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: -5rem;
+    left: 0;
+
+    font-size: 2.66rem;
+    font-weight: 600;
+
+    @include breakpoint($large-tablets) {
+      top: -1rem;
     }
 
-    &__items {
-        height: 100%;
+    @include breakpoint($extra-small) {
+      font-size: 1.866rem;
+      top: 0;
+    }
+  }
 
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
+  &__item {
+    padding: 0.8rem 0.8rem;
 
-        @include breakpoint($large-tablets) {
-            padding-top: 3rem;
-        }
+    width: 100%;
+    max-width: 20rem;
+    height: 27.313rem;
+
+    background-color: $white;
+    border-radius: 1.2rem;
+
+    @include breakpoint($desktops) {
+      height: auto;
     }
 
-    &__title {
-        position: absolute;
-        top: -5rem;
-        left: 0;
-
-        font-size: 2.66rem;
-        font-weight: 600;
-
-        @include breakpoint($large-tablets) {
-            top: -1rem;
-        }
-
-        @include breakpoint($extra-small) {
-            font-size: 1.866rem;
-            top: 0;
-        }
+    @include breakpoint($large-tablets) {
+      width: 11.2rem;
     }
 
-    &__item {
-        margin-bottom: 2rem;
-        margin-right: 2rem;
-        padding: .8rem .8rem;
-
-        width: 100%;
-        max-width: 20rem;
-        height: 27.313rem;
-
-        background-color: $white;
-        border-radius: 1.2rem;
-
-        &:nth-of-type(3n) {
-            margin-right: 0;
-        }
-
-        @include breakpoint($desktops) {
-            height: auto;
-
-            &:nth-of-type(3n) {
-                margin-right: 2rem;
-            }
-
-            &:nth-of-type(2n) {
-                margin-right: 0;
-            }
-        }
-
-        @include breakpoint($large-tablets) {
-            width: 11.2rem;
-
-            &:nth-of-type(2n) {
-                margin-right: 2rem;
-            }
-        }
-
-        @include breakpoint($extra-small) {
-            padding: .266rem .266rem;
-            margin-right: 1.333rem;
-            margin-bottom: 1.333rem;
-            width: 9.666rem;
-
-            &:nth-of-type(2n),
-            &:nth-of-type(3n) {
-                margin-right: 1.333rem;
-            }
-        }
-
-        @include breakpoint($mobile) {
-            margin-right: .666rem !important;
-            margin-bottom: .666rem;
-            width: 9.5rem;
-
-            &:nth-of-type(2n) {
-                margin-right: 0 !important;
-            }
-        }
+    @include breakpoint($extra-small) {
+      padding: 0.266rem 0.266rem;
+      width: 9.666rem;
     }
 
-    &__img {
-        margin-bottom: 1.066rem;
+    @include breakpoint($mobile) {
+      width: 9.5rem;
+    }
+  }
 
-        transition: transform .2s linear;
+  &__img {
+    margin-bottom: 1.066rem;
 
-        &:hover {
-            transform: scale(1.03);
-        }
+    transition: transform 0.2s linear;
 
-        @include breakpoint($extra-small) {
-            margin-bottom: .666rem;
-        }
+    &:hover {
+      transform: scale(1.03);
     }
 
-    &__price {
-        margin-bottom: .33em;
+    @include breakpoint($extra-small) {
+      margin-bottom: 0.666rem;
+    }
+  }
 
-        font-size: 1.6rem;
-        line-height: 1;
-        font-weight: 600;
+  &__price {
+    margin-bottom: 0.33em;
 
-        @include breakpoint($extra-small) {
-            margin-bottom: .25em;
-            font-size: 1.066rem;
-        }
+    font-size: 1.6rem;
+    line-height: 1;
+    font-weight: 600;
+
+    @include breakpoint($extra-small) {
+      margin-bottom: 0.25em;
+      font-size: 1.066rem;
+    }
+  }
+
+  &__name {
+    margin-bottom: 1.81em;
+    font-size: 1.06rem;
+
+    @include breakpoint($large-tablets) {
+      font-size: 0.9rem;
     }
 
-    &__name {
-        margin-bottom: 1.81em;
-        font-size: 1.06rem;
-
-        @include breakpoint($large-tablets) {
-            font-size: .9rem;
-        }
-
-        @include breakpoint($extra-small) {
-            margin-bottom: 1.333em;
-            font-size: .8rem;
-        }
+    @include breakpoint($extra-small) {
+      margin-bottom: 1.333em;
+      font-size: 0.8rem;
     }
+  }
 
-    &__weight {
-        margin-bottom: .5em;
+  &__weight {
+    margin-bottom: 0.5em;
 
-        font-size: 1.06rem;
-        font-weight: 600;
-        color: $metallic;
+    font-size: 1.06rem;
+    font-weight: 600;
+    color: $metallic;
 
-        @include breakpoint($extra-small) {
-            margin-bottom: .583em;
-            font-size: .8rem;
-        }
+    @include breakpoint($extra-small) {
+      margin-bottom: 0.583em;
+      font-size: 0.8rem;
     }
+  }
 }

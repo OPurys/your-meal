@@ -1,83 +1,86 @@
 //  === card.js ===
 
-const modalAdd = document.getElementById('add');
+const modalAdd = document.getElementById("add");
 let productsData3 = [];
 
 getProducts3();
 
-
 // Получение товара
 async function getProducts3() {
-
-    try {
-        if (!productsData3.length) {
-            const res = await fetch('../files/data.json');
-            if (!res.ok) {
-                throw new Error(res.statusText);
-            }
-            productsData3 = await res.json();
-        }
-
-        loadProductDetails(productsData3);
-        modal();
-
-    } catch (err) {
-        showErrorMessage(ERROR_SERVER);
-        console.log(err.message);
+  try {
+    if (!productsData3.length) {
+      const res = await fetch("../files/data.json");
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
+      productsData3 = await res.json();
     }
-}
 
+    loadProductDetails(productsData3);
+    modal();
+  } catch (err) {
+    showErrorMessage(ERROR_SERVER);
+    console.log(err.message);
+  }
+}
 
 // Загрузка информации о товаре в модальном окне
 function loadProductDetails(data) {
+  if (!data || !data.length) {
+    showErrorMessage(ERROR_SERVER);
+    return;
+  }
 
-    if (!data || !data.length) {
-        showErrorMessage(ERROR_SERVER)
+  checkingRelevanceValueBasket(data);
+
+  document.addEventListener("click", (event) => {
+    if (event.target.dataset.imgId) {
+      if (!event.target.dataset.imgId) {
+        showErrorMessage(PRODUCT_INFORMATION_NOT_FOUND);
         return;
+      }
+
+      modalAdd.textContent = "";
+
+      const findProduct = data.find(
+        (card) => card.id == event.target.dataset.imgId
+      );
+
+      if (!findProduct) {
+        showErrorMessage(PRODUCT_INFORMATION_NOT_FOUND);
+        return;
+      }
+
+      renderInfoProduct(findProduct);
+      productCounterInModal();
+      addProductFromModalToBasket();
+      calcSubtotalPriceProduct();
+      checkingActiveButtonInModal();
     }
-
-    checkingRelevanceValueBasket(data);
-
-
-    document.addEventListener('click', event => {
-
-        if (event.target.dataset.imgId) {
-
-            if (!event.target.dataset.imgId) {
-                showErrorMessage(PRODUCT_INFORMATION_NOT_FOUND)
-                return;
-            }
-
-            modalAdd.textContent = '';
-
-            const findProduct = data.find(card => card.id == event.target.dataset.imgId);
-
-            if (!findProduct) {
-                showErrorMessage(PRODUCT_INFORMATION_NOT_FOUND)
-                return;
-            }
-
-            renderInfoProduct(findProduct);
-            modal();
-            productCounterInModal();
-            addProductFromModalToBasket();
-            calcSubtotalPriceProduct();
-            checkingActiveButtonInModal();
-        }
-    });
+  });
 }
-
 
 // Рендер информации о товаре
 function renderInfoProduct(product) {
+  const {
+    id,
+    img,
+    title,
+    price,
+    weight,
+    ccal,
+    cp1,
+    cp2,
+    cp3,
+    cp4,
+    cp5,
+    descr,
+  } = product;
 
-    const { id, img, title, price, weight, ccal, cp1, cp2, cp3, cp4, cp5, descr } = product;
-
-    const productItem =
-        `
+  const productItem = `
         <div class="modal__dialog  modal__dialog--height">
             <button class="btn  btn--close" type="button" data-close="#add">
-                <img src="img/modal/close.svg" alt="close">
+                <img src="img/modal/close.svg" width="24" height="24" alt="Закрыть">
             </button>
 
             <div class="modal-inner">
@@ -87,7 +90,7 @@ function renderInfoProduct(product) {
 
                 <div class="modal-inner__direction">
                     <div class="modal-inner__left">
-                        <img class="img modal-inner__photo" src="img/products/${img}" alt="product">
+                        <img class="img modal-inner__photo" src="img/products/${img}" width="276" height="220" alt="Продукт">
                     </div>
 
                     <div class="modal-inner__right">
@@ -133,110 +136,100 @@ function renderInfoProduct(product) {
                 </div>
             </div>
         </div>
-        `
+        `;
 
-    modalAdd.insertAdjacentHTML('beforeend', productItem);
+  modalAdd.insertAdjacentHTML("beforeend", productItem);
 }
-
 
 // Счетчик количества товаров в модальном окне
 function productCounterInModal() {
+  const modalCounter = document.querySelector(".modal-counter");
+  const modalCounterPlus = document.querySelector(".modal-counter__plus");
+  const modalCounterMinus = document.querySelector(".modal-counter__minus");
+  const modalCounterResult = document.querySelector(".modal-counter__result");
 
-    const modalCounter = document.querySelector('.modal-counter');
-    const modalCounterPlus = document.querySelector('.modal-counter__plus');
-    const modalCounterMinus = document.querySelector('.modal-counter__minus');
-    const modalCounterResult = document.querySelector('.modal-counter__result');
+  const basket = getBasketLocalStorage();
 
-    const basket = getBasketLocalStorage();
+  let count1 = 0;
 
-    let count1 = 0;
+  basket.forEach((item) => {
+    if (item == modalCounter.dataset.modalCounterId) {
+      count1++;
+      modalCounterResult.textContent = count1;
+    }
+  });
 
-    basket.forEach((item) => {
+  let count2 = 1;
 
-        if (item == modalCounter.dataset.modalCounterId) {
-            count1++;
-            modalCounterResult.textContent = count1;
-        }
-    })
+  modalCounterPlus.addEventListener("click", () => {
+    count2++;
+    modalCounterResult.textContent = count2;
+  });
 
-    let count2 = 1;
-
-    modalCounterPlus.addEventListener('click', () => {
-        count2++;
-        modalCounterResult.textContent = count2;
-    });
-
-    modalCounterMinus.addEventListener('click', () => {
-        if (count2 > 1) {
-            count2--;
-        }
-        modalCounterResult.textContent = count2;
-    });
+  modalCounterMinus.addEventListener("click", () => {
+    if (count2 > 1) {
+      count2--;
+    }
+    modalCounterResult.textContent = count2;
+  });
 }
-
 
 // Калькулятор подытога товара в модальном окне
 function calcSubtotalPriceProduct() {
+  const modalCounterResult = document.querySelector(".modal-counter__result");
+  const modalInnerPrice = document.querySelector(".modal-inner__price");
 
-    const modalCounterResult = document.querySelector('.modal-counter__result');
-    const modalInnerPrice = document.querySelector('.modal-inner__price');
+  let subtotalPriceEl =
+    modalCounterResult.textContent * parseInt(modalInnerPrice.textContent);
 
-    let subtotalPriceEl = modalCounterResult.textContent * parseInt(modalInnerPrice.textContent);
-
-    modalInnerPrice.textContent = subtotalPriceEl + '₴';
+  modalInnerPrice.textContent = subtotalPriceEl + "₴";
 }
-
 
 // Добавление товаров из модального окна в корзину
 function addProductFromModalToBasket() {
+  const modalButtonAdd = modalAdd.querySelector("[data-modal-add]");
+  const modalCounter = document.querySelector(".modal-counter");
+  const modalCounterResult = document.querySelector(".modal-counter__result");
 
-    const modalButtonAdd = modalAdd.querySelector('[data-modal-add]');
-    const modalCounter = document.querySelector('.modal-counter');
-    const modalCounterResult = document.querySelector('.modal-counter__result');
+  modalButtonAdd.addEventListener("click", () => {
+    const id = modalCounter.dataset.modalCounterId;
+    const count = modalCounterResult.textContent;
+    const basket = getBasketLocalStorage();
 
-    modalButtonAdd.addEventListener('click', () => {
+    if (basket.includes(id)) return;
 
-        const id = modalCounter.dataset.modalCounterId;
-        const count = modalCounterResult.textContent;
-        const basket = getBasketLocalStorage();
+    for (let i = 1; i <= count; i++) {
+      basket.push(id);
+      setBasketLocalStorage(basket);
+    }
 
-        if (basket.includes(id)) return;
+    loadProductBasket(productsData3);
+    hiddenOnOff();
 
-        for (let i = 1; i <= count; i++) {
-            basket.push(id);
-            setBasketLocalStorage(basket);
-        }
+    productCounterBasket();
+    calcTotalPriceOrder();
+    calcSubtotalPriceProduct();
 
-        loadProductBasket(productsData3);
-        hiddenOnOff();
-
-        productCounterBasket();
-        calcTotalPriceOrder();
-        calcSubtotalPriceProduct();
-
-        checkingActiveButtons(getBasketLocalStorage());
-        checkingActiveButtonInModal();
-    });
+    checkingActiveButtons(getBasketLocalStorage());
+    checkingActiveButtonInModal();
+  });
 }
-
 
 // Проверка активности кнопки (Изменение текста и цвета кнопки если товар добавлен в корзину)
 function checkingActiveButtonInModal() {
+  const modalCounter = document.querySelector(".modal-counter");
+  const modalButtonAdd = modalAdd.querySelector("[data-modal-add]");
+  const modalCounterPlus = document.querySelector(".modal-counter__plus");
+  const modalCounterMinus = document.querySelector(".modal-counter__minus");
 
-    const modalCounter = document.querySelector('.modal-counter');
-    const modalButtonAdd = modalAdd.querySelector('[data-modal-add]');
-    const modalCounterPlus = document.querySelector('.modal-counter__plus');
-    const modalCounterMinus = document.querySelector('.modal-counter__minus');
+  const id = modalCounter.dataset.modalCounterId;
+  const basket = getBasketLocalStorage();
+  const isInBasket = basket.includes(id);
 
-    const id = modalCounter.dataset.modalCounterId;
-    const basket = getBasketLocalStorage();
-    const isInBasket = basket.includes(id);
+  modalButtonAdd.disabled = isInBasket;
+  modalCounterPlus.disabled = isInBasket;
+  modalCounterMinus.disabled = isInBasket;
 
-    modalButtonAdd.disabled = isInBasket;
-    modalCounterPlus.disabled = isInBasket;
-    modalCounterMinus.disabled = isInBasket;
-
-    modalButtonAdd.classList.toggle('active--modal', isInBasket);
-    modalButtonAdd.textContent = isInBasket ? 'Добавлено' : 'Добавить';
+  modalButtonAdd.classList.toggle("active--modal", isInBasket);
+  modalButtonAdd.textContent = isInBasket ? "Добавлено" : "Добавить";
 }
-
