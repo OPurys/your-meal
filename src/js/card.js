@@ -53,6 +53,7 @@ function loadProductDetails(data) {
 
       renderInfoProduct(findProduct);
       productCounterInModal();
+      modalsDialogStopPropagation();
       addProductFromModalToBasket();
       calcSubtotalPriceProduct();
       checkingActiveButtonInModal();

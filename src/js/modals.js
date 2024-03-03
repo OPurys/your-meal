@@ -1,4 +1,5 @@
 // === modals.js ===
+const modals = document.querySelectorAll(".modal");
 
 // Body disable / enable
 const body = document.body;
@@ -15,11 +16,7 @@ function enable() {
 }
 
 function modal() {
-  const modals = document.querySelectorAll(".modal");
-  const modalsDialog = document.querySelectorAll(".modal__dialog");
   const modalBtn = document.querySelectorAll("[data-modal]");
-  const modalCloses = document.querySelectorAll("[data-close]");
-  const modalButtonAdd = modalAdd.querySelectorAll("[data-modal-add]");
 
   // Открытие модального окна
   modalBtn.forEach((btn) =>
@@ -33,20 +30,6 @@ function modal() {
       setTimeout(() => {
         modals.forEach((el) => (el.style.transform = "scale(1)"));
       }, 1);
-    })
-  );
-
-  // Закрытие модального окна при нажатии на крестик
-  modalCloses.forEach((el) =>
-    el.addEventListener("click", () => {
-      let modalParent = el.getAttribute("data-close");
-
-      setTimeout(() => {
-        document.querySelector(modalParent).classList.add("hidden");
-        enable();
-      }, 400);
-
-      modals.forEach((el) => (el.style.transform = "scale(0)"));
     })
   );
 
@@ -74,17 +57,51 @@ function modal() {
     })
   );
 
-  modalsDialog.forEach((el) =>
+  modalsDialogStopPropagation();
+  closeModalWhenPressButtonClose();
+  closeModalWhenPressButtonAdd();
+}
+
+// Отмена закрытия модального окна при клике на диалоговое окно
+function modalsDialogStopPropagation() {
+  const modalsDialog = document.querySelectorAll(".modal__dialog");
+
+  modalsDialog.forEach((el) => {
     el.addEventListener("click", (e) => {
       e.stopPropagation();
-    })
-  );
+    });
+  });
 
-  // Закрытие модального окна при нажатии на кнопку Добавить
+  closeModalWhenPressButtonClose();
+  closeModalWhenPressButtonAdd();
+}
+
+// Закрытие модального окна при нажатии на кнопку Добавить
+function closeModalWhenPressButtonAdd() {
+  const modalButtonAdd = modalAdd.querySelectorAll("[data-modal-add]");
+
   modalButtonAdd.forEach((btn) =>
     btn.addEventListener("click", () => {
       setTimeout(() => {
         modalAdd.classList.add("hidden");
+        enable();
+      }, 400);
+
+      modals.forEach((el) => (el.style.transform = "scale(0)"));
+    })
+  );
+}
+
+// Закрытие модального окна при нажатии на крестик
+function closeModalWhenPressButtonClose() {
+  const modalCloses = document.querySelectorAll("[data-close]");
+
+  modalCloses.forEach((el) =>
+    el.addEventListener("click", () => {
+      let modalParent = el.getAttribute("data-close");
+
+      setTimeout(() => {
+        document.querySelector(modalParent).classList.add("hidden");
         enable();
       }, 400);
 
