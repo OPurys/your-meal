@@ -55,29 +55,22 @@
 
   &__item {
     padding: 0.8rem 0.8rem;
-
-    width: 100%;
-    max-width: 20rem;
-    height: 27.313rem;
+    width: calc((100% - 4rem) / 3);
 
     background-color: $white;
     border-radius: 1.2rem;
 
-    @include breakpoint($desktops) {
-      height: auto;
-    }
-
     @include breakpoint($large-tablets) {
-      width: 11.2rem;
+      width: calc((100% - 6rem) / 4);
     }
 
     @include breakpoint($extra-small) {
       padding: 0.266rem 0.266rem;
-      width: 9.666rem;
+      width: calc((100% - 4rem) / 4);
     }
 
     @include breakpoint($mobile) {
-      width: 9.5rem;
+      width: calc((100% - 0.666rem) / 2);
     }
   }
 
