@@ -7131,6 +7131,9 @@ h6 {
   }
 }
 .menu__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5em;
@@ -7155,11 +7158,13 @@ h6 {
   background-color: #fff;
   border: 0.066rem solid #fff;
   border-radius: 3.125em;
+  outline: none;
+  transition: border-color 0.2s linear;
 }
 .menu__link.active {
   background-color: #FFAB08;
 }
-.menu__link:hover {
+.menu__link:hover, .menu__link:focus {
   border-color: #f86310;
 }
 @media screen and (max-width: 768px) {
@@ -7466,10 +7471,10 @@ h6 {
   font-size: 0;
   background: none;
   border-radius: 0;
-  transition: transform 0.2s linear;
+  transition: fill 0.2s linear;
 }
-.btn--close:hover {
-  transform: translateY(-0.06rem);
+.btn--close:hover svg, .btn--close:focus svg {
+  fill: #FF7020;
 }
 @media screen and (max-width: 768px) {
   .btn--close {
@@ -7601,7 +7606,11 @@ h6 {
 .footer__social {
   margin-top: 1rem;
 }
+.footer__social a {
+  outline: none;
+}
 .footer__social > a:first-child {
+  display: inline-block;
   text-decoration: none;
   margin-right: 0.6rem;
 }
@@ -7610,9 +7619,12 @@ h6 {
     margin-top: 0.533rem;
   }
 }
-.footer__icon:hover {
-  transition: transform 0.4s linear;
-  transform: rotate(360deg);
+.footer__icon {
+  fill: #FF7020;
+  transition: fill 0.2s linear;
+}
+a:hover .footer__icon, a:focus .footer__icon {
+  fill: #FFAB08;
 }
 .footer__copyright {
   margin-top: 2.833em;

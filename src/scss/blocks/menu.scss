@@ -10,6 +10,9 @@
   }
 
   &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
@@ -36,12 +39,15 @@
     background-color: $white;
     border: 0.066rem solid $white;
     border-radius: 3.125em;
+    outline: none;
+    transition: border-color 0.2s linear;
 
     &.active {
       background-color: $yellow-orange;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       border-color: #f86310;
     }
 

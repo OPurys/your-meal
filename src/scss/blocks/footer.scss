@@ -68,7 +68,12 @@
   &__social {
     margin-top: 1rem;
 
+    a {
+      outline: none;
+    }
+
     & > a:first-child {
+      display: inline-block;
       text-decoration: none;
       margin-right: 0.6rem;
     }
@@ -78,9 +83,14 @@
     }
   }
 
-  &__icon:hover {
-    transition: transform 0.4s linear;
-    transform: rotate(360deg);
+  &__icon {
+    fill: $orange;
+    transition: fill 0.2s linear;
+  }
+
+  a:hover &__icon,
+  a:focus &__icon {
+    fill: $yellow-orange;
   }
 
   &__copyright {

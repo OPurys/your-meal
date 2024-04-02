@@ -81,7 +81,9 @@ function renderInfoProduct(product) {
   const productItem = `
         <div class="modal__dialog  modal__dialog--height">
             <button class="btn  btn--close" type="button" data-close="#add">
-                <img src="img/modal/close.svg" width="24" height="24" alt="Закрыть">
+              <svg width="24" height="24">
+                <use href="./img/icons.svg#close"></use>
+              </svg>
             </button>
 
             <div class="modal-inner">
