@@ -7257,10 +7257,11 @@ h6 {
 }
 .products__img {
   margin-bottom: 1.066rem;
-  transition: transform 0.2s linear;
+  border-radius: 0.8rem;
+  transition: box-shadow 0.25s linear;
 }
 .products__img:hover {
-  transform: scale(1.03);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
 @media screen and (max-width: 768px) {
   .products__img {
@@ -7499,7 +7500,7 @@ h6 {
   color: #fff;
   background-color: #FF7020;
 }
-.btn:hover:not(.btn--close) {
+.btn:hover:not(.active--modal, .active) {
   background-color: #FFAB08;
 }
 .btn--modal {
@@ -7632,27 +7633,29 @@ a:hover .footer__icon, a:focus .footer__icon {
 }
 
 .modal {
-  display: flex;
-  width: 100%;
-  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.6);
-  transform: scale(0);
-  transition: transform 0.4s linear;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.25s linear;
 }
 .modal__dialog {
-  position: relative;
-  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   max-width: 45.6rem;
   max-height: 28.8rem;
   background-color: #f9f9f9;
   border-radius: 1.6rem;
-  overflow: auto;
+  overflow-y: auto;
   /* width */
   /* Track */
   /* Handle */
@@ -8016,6 +8019,11 @@ a:hover .footer__icon, a:focus .footer__icon {
 
 .hidden {
   display: none;
+}
+
+.is-open {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .visibility {

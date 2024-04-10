@@ -76,11 +76,11 @@
 
   &__img {
     margin-bottom: 1.066rem;
-
-    transition: transform 0.2s linear;
+    border-radius: 0.8rem;
+    transition: box-shadow 0.25s linear;
 
     &:hover {
-      transform: scale(1.03);
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
     }
 
     @include breakpoint($extra-small) {

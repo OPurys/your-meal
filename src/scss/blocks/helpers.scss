@@ -1,17 +1,22 @@
 .img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+.is-open {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .visibility {
-    visibility: hidden;
+  visibility: hidden;
 }

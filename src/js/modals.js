@@ -11,8 +11,10 @@ function disable() {
 }
 
 function enable() {
-  body.classList.remove("no-scroll");
-  body.style.paddingRight = "0px";
+  setTimeout(() => {
+    body.classList.remove("no-scroll");
+    body.style.paddingRight = "0px";
+  }, 250);
 }
 
 function modal() {
@@ -24,36 +26,24 @@ function modal() {
       e.preventDefault();
       let modalId = btn.getAttribute("data-modal");
 
-      document.querySelector(modalId).classList.remove("hidden");
+      document.querySelector(modalId).classList.remove("is-open");
       disable();
-
-      setTimeout(() => {
-        modals.forEach((el) => (el.style.transform = "scale(1)"));
-      }, 1);
     })
   );
 
   // Закрытие модального окна при нажатии на кнопку Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      setTimeout(() => {
-        modals.forEach((mdl) => mdl.classList.add("hidden"));
-        enable();
-      }, 400);
-
-      modals.forEach((el) => (el.style.transform = "scale(0)"));
+      modals.forEach((mdl) => mdl.classList.add("is-open"));
+      enable();
     }
   });
 
   // Закрытие модального окна при клике вне диалогового окна
   modals.forEach((mdl) =>
     mdl.addEventListener("click", () => {
-      setTimeout(() => {
-        mdl.classList.add("hidden");
-        enable();
-      }, 400);
-
-      modals.forEach((el) => (el.style.transform = "scale(0)"));
+      mdl.classList.add("is-open");
+      enable();
     })
   );
 
@@ -82,12 +72,8 @@ function closeModalWhenPressButtonAdd() {
 
   modalButtonAdd.forEach((btn) =>
     btn.addEventListener("click", () => {
-      setTimeout(() => {
-        modalAdd.classList.add("hidden");
-        enable();
-      }, 400);
-
-      modals.forEach((el) => (el.style.transform = "scale(0)"));
+      modalAdd.classList.add("is-open");
+      enable();
     })
   );
 }
@@ -100,12 +86,8 @@ function closeModalWhenPressButtonClose() {
     el.addEventListener("click", () => {
       let modalParent = el.getAttribute("data-close");
 
-      setTimeout(() => {
-        document.querySelector(modalParent).classList.add("hidden");
-        enable();
-      }, 400);
-
-      modals.forEach((el) => (el.style.transform = "scale(0)"));
+      document.querySelector(modalParent).classList.add("is-open");
+      enable();
     })
   );
 }

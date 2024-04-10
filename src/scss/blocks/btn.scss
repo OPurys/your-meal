@@ -76,7 +76,7 @@
     background-color: $orange;
   }
 
-  &:hover:not(&--close) {
+  &:hover:not(.active--modal, .active) {
     background-color: $yellow-orange;
   }
 
