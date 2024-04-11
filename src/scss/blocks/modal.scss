@@ -6,10 +6,11 @@
   height: 100%;
   z-index: 999;
   background-color: rgba($black, 0.6);
+  transition: opacity 0.25s linear, visibility 0.25s linear;
 
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 0.25s linear;
+  visibility: visible;
 
   &__dialog {
     position: absolute;
