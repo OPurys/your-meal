@@ -14,16 +14,11 @@
   border-radius: 0.75em;
   background-color: $gray;
 
-  transition: background-color 0.2s linear;
+  transition: background-color 0.25s linear, color 0.25s linear;
 
   &.active {
     color: $white;
-    background-color: $orange;
-  }
-
-  &.active--modal {
-    color: $white;
-    background-color: greenyellow;
+    background-color: rgb(255, 92, 0);
   }
 
   @include breakpoint($extra-small) {
@@ -44,7 +39,7 @@
     background: none;
     border-radius: 0;
 
-    transition: fill 0.2s linear;
+    transition: fill 0.25s linear;
 
     &:hover svg,
     &:focus svg {
@@ -76,8 +71,14 @@
     background-color: $orange;
   }
 
-  &:hover:not(.active--modal, .active) {
+  &:hover:not(.active, .btn--collapse, .btn--expand) {
     background-color: $yellow-orange;
+    color: $white;
+  }
+
+  &:focus:not(.active, .btn--collapse, .btn--expand) {
+    background-color: $orange;
+    color: $white;
   }
 
   &--modal {
@@ -102,7 +103,7 @@
     background: none;
     cursor: pointer;
 
-    transition: opacity 0.2s linear;
+    transition: opacity 0.25s linear;
 
     &:hover {
       background: none !important;

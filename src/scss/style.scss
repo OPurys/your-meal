@@ -29,6 +29,12 @@ h6 {
   margin: 0;
 }
 
+a {
+  color: currentColor;
+  text-decoration: none;
+  outline: transparent;
+}
+
 ::selection {
   background-color: $orange;
   color: $white;

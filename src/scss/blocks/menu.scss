@@ -33,13 +33,9 @@
     align-items: center;
 
     font-size: 1.066rem;
-    text-decoration: none;
-    color: $black;
-
     background-color: $white;
     border: 0.066rem solid $white;
     border-radius: 3.125em;
-    outline: none;
     transition: border-color 0.2s linear;
 
     &.active {

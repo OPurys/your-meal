@@ -7008,6 +7008,12 @@ h6 {
   margin: 0;
 }
 
+a {
+  color: currentColor;
+  text-decoration: none;
+  outline: transparent;
+}
+
 ::selection {
   background-color: #FF7020;
   color: #fff;
@@ -7153,12 +7159,9 @@ h6 {
   display: flex;
   align-items: center;
   font-size: 1.066rem;
-  text-decoration: none;
-  color: #000;
   background-color: #fff;
   border: 0.066rem solid #fff;
   border-radius: 3.125em;
-  outline: none;
   transition: border-color 0.2s linear;
 }
 .menu__link.active {
@@ -7447,15 +7450,11 @@ h6 {
   font-size: 1.06rem;
   border-radius: 0.75em;
   background-color: #F2F2F3;
-  transition: background-color 0.2s linear;
+  transition: background-color 0.25s linear, color 0.25s linear;
 }
 .btn.active {
   color: #fff;
-  background-color: #FF7020;
-}
-.btn.active--modal {
-  color: #fff;
-  background-color: greenyellow;
+  background-color: rgb(255, 92, 0);
 }
 @media screen and (max-width: 768px) {
   .btn {
@@ -7472,7 +7471,7 @@ h6 {
   font-size: 0;
   background: none;
   border-radius: 0;
-  transition: fill 0.2s linear;
+  transition: fill 0.25s linear;
 }
 .btn--close:hover svg, .btn--close:focus svg {
   fill: #FF7020;
@@ -7500,8 +7499,13 @@ h6 {
   color: #fff;
   background-color: #FF7020;
 }
-.btn:hover:not(.active--modal, .active) {
+.btn:hover:not(.active, .btn--collapse, .btn--expand) {
   background-color: #FFAB08;
+  color: #fff;
+}
+.btn:focus:not(.active, .btn--collapse, .btn--expand) {
+  background-color: #FF7020;
+  color: #fff;
 }
 .btn--modal {
   margin-bottom: 0;
@@ -7522,7 +7526,7 @@ h6 {
   border-radius: none;
   background: none;
   cursor: pointer;
-  transition: opacity 0.2s linear;
+  transition: opacity 0.25s linear;
 }
 .btn--collapse:hover, .btn--expand:hover {
   background: none !important;
@@ -7607,12 +7611,8 @@ h6 {
 .footer__social {
   margin-top: 1rem;
 }
-.footer__social a {
-  outline: none;
-}
 .footer__social > a:first-child {
   display: inline-block;
-  text-decoration: none;
   margin-right: 0.6rem;
 }
 @media screen and (max-width: 768px) {

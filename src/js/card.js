@@ -233,6 +233,6 @@ function checkingActiveButtonInModal() {
   modalCounterPlus.disabled = isInBasket;
   modalCounterMinus.disabled = isInBasket;
 
-  modalButtonAdd.classList.toggle("active--modal", isInBasket);
+  modalButtonAdd.classList.toggle("active", isInBasket);
   modalButtonAdd.textContent = isInBasket ? "Добавлено" : "Добавить";
 }
